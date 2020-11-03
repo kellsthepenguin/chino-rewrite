@@ -12,5 +12,6 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("com.natpryce:konfig:1.6.10.0")
     testCompile("junit", "junit", "4.12")
 }
