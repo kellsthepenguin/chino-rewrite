@@ -1,4 +1,5 @@
 package com.github.pikokr.chino
 
-class Chino {
+object Chino {
+    val config = ChinoConfigManager()
 }
