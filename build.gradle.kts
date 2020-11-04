@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.android.synthetic.androidIdToName
+
 plugins {
     java
     kotlin("jvm") version "1.4.10"
@@ -16,4 +18,12 @@ dependencies {
     implementation("com.natpryce:konfig:1.6.10.0")
     implementation("net.dv8tion:JDA:4.2.0_168")
     testCompile("junit", "junit", "4.12")
+}
+
+tasks {
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
 }
