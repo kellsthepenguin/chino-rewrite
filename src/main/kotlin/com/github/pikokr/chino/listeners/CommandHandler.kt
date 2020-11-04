@@ -3,12 +3,17 @@ package com.github.pikokr.chino.listeners
 import com.github.pikokr.chino.Chino
 import com.github.pikokr.chino.commands.dev.Jss
 import com.github.pikokr.chino.commands.dev.Kts
+import com.github.pikokr.chino.commands.general.Help
 import com.github.pikokr.chino.structs.Listener
 import net.dv8tion.jda.api.events.GenericEvent
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import java.awt.Color
 
-fun commandList() = arrayOf(Kts, Jss)
+fun commandList() = arrayOf(
+        // dev
+        Kts, Jss,
+        // general
+        Help)
 
 object CommandHandler : Listener() {
     override fun execute(e: GenericEvent) {
