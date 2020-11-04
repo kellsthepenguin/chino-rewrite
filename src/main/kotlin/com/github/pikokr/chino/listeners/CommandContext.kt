@@ -10,4 +10,8 @@ class CommandContext(val cmd: Command, val evt: MessageReceivedEvent) {
     infix fun reply(msg: String) = evt.channel.sendMessage(msg).queue()
     infix fun reply(msg: Message) = evt.channel.sendMessage(msg).queue()
     infix fun reply(msg: MessageEmbed) = evt.channel.sendMessage(msg).queue()
+
+    infix fun dm(msg: String) = evt.author.openPrivateChannel().queue { it.sendMessage(msg).queue() }
+    infix fun dm(msg: Message) = evt.author.openPrivateChannel().queue { it.sendMessage(msg).queue() }
+    infix fun dm(msg: MessageEmbed) = evt.author.openPrivateChannel().queue { it.sendMessage(msg).queue() }
 }
