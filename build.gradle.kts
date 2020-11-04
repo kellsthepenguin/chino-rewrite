@@ -14,6 +14,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
     implementation("com.natpryce:konfig:1.6.10.0")
