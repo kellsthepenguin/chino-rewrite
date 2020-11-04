@@ -12,6 +12,9 @@ object CommandHandler : Listener() {
                 val prefix = Chino.config.commandPrefix
                 if (!it.message.contentRaw.startsWith(prefix)) return@evt
                 val args = it.message.contentRaw.removePrefix(prefix).split(" ")
+                val command = args[0]
+                args.slice(1..args.size)
+                println(command)
             }
         }
     }
