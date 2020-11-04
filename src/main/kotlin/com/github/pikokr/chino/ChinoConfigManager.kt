@@ -9,4 +9,5 @@ class ChinoConfigManager {
     val config = ConfigurationProperties.fromFile(File("chino.properties"))
     val token = config[Key("token", stringType)]
     val commandPrefix = config[Key("commandPrefix", stringType)]
+    val owners = config[Key("owners", stringType)].split("#")
 }

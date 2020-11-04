@@ -15,8 +15,14 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation(kotlin("reflect"))
     implementation("com.natpryce:konfig:1.6.10.0")
     implementation("net.dv8tion:JDA:4.2.0_168")
+    implementation(kotlin("script-util"))
+    implementation(kotlin("compiler"))
+    implementation(kotlin("script-runtime"))
+    implementation(kotlin("scripting-compiler"))
+    runtimeOnly(kotlin("compiler-embeddable"))
     testCompile("junit", "junit", "4.12")
 }
 
