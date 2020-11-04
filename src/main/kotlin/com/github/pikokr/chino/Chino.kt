@@ -7,6 +7,8 @@ object Chino {
     val config = ChinoConfigManager()
     val jda: JDA
     init {
-        jda = JDABuilder.createDefault(config.token).build()
+        jda = JDABuilder.createDefault(config.token)
+                .addEventListeners(ListenerRegistry)
+                .build()
     }
 }
