@@ -21,7 +21,7 @@ object CommandHandler : Listener() {
             evt(MessageReceivedEvent::class) {
                 val prefix = Chino.config.commandPrefix
                 if (!it.message.contentRaw.startsWith(prefix)) return@evt
-                var args = it.message.contentRaw.removePrefix(prefix).split(" ").toMutableList()
+                val args = it.message.contentRaw.removePrefix(prefix).split(" ").toMutableList()
                 val command = args[0]
                 args.removeAt(0)
                 val commands = commandList()
@@ -32,7 +32,8 @@ object CommandHandler : Listener() {
                 val info = cmd.getInfo()
                 val ctx = CommandContext(cmd, it, args)
                 if (info.ownerOnly && it.author.id !in Chino.config.owners) {
-                    return@evt ctx reply ctx.embed().setTitle("개발자 전용 명령어").setColor(Color.RED).setDescription("이 명령어는 봇 개발자만 사용 할 수 있어요!").build()
+                    ctx reply ctx.embed().setTitle("개발자 전용 명령어").setColor(Color.RED).setDescription("이 명령어는 봇 개발자만 사용 할 수 있어요!").build()
+                    return@evt
                 }
                 cmd.execute(ctx)
             }

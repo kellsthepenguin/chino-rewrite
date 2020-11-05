@@ -4,5 +4,5 @@ data class CommandInfo(val name: String="", val aliases: ArrayList<String> = arr
 
 open class Command {
     open fun getInfo(): CommandInfo = CommandInfo()
-    open fun execute(ctx: CommandContext) {}
+    open suspend fun execute(ctx: CommandContext) {}
 }

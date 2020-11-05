@@ -12,8 +12,11 @@ object Jss : Command() {
         return CommandInfo("jss", ownerOnly = true)
     }
 
-    override fun execute(ctx: CommandContext) {
-        if (ctx.args.isEmpty()) return ctx reply "내용을 입력해주세요"
+    override suspend fun execute(ctx: CommandContext) {
+        if (ctx.args.isEmpty()) {
+            ctx reply "내용을 입력해주세요"
+            return
+        }
         val manager = ScriptEngineManager()
         val engine = manager.getEngineByExtension("js")!!
         engine.put("ctx", ctx)

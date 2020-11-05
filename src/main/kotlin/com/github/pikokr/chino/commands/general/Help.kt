@@ -11,7 +11,7 @@ object Help : Command() {
         return CommandInfo(name = "도움말", aliases = arrayListOf("도움", "help", "명령어"))
     }
 
-    override fun execute(ctx: CommandContext) {
+    override suspend fun execute(ctx: CommandContext) {
         val embed = ctx.embed()
         embed.setTitle("치노 도움말!")
         val commands = commandList()
