@@ -19,6 +19,7 @@ object CommandHandler : Listener() {
     override fun execute(e: GenericEvent) {
         handler(e) {
             evt(MessageReceivedEvent::class) {
+                if (it.author.isBot) return@evt
                 val prefix = Chino.config.commandPrefix
                 if (!it.message.contentRaw.startsWith(prefix)) return@evt
                 val args = it.message.contentRaw.removePrefix(prefix).split(" ").toMutableList()
