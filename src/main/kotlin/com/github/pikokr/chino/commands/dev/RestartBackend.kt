@@ -1,10 +1,10 @@
 package com.github.pikokr.chino.commands.dev
 
 import com.github.pikokr.chino.Chino
+import com.github.pikokr.chino.backend.BackendServer
 import com.github.pikokr.chino.listeners.Command
 import com.github.pikokr.chino.listeners.CommandContext
 import com.github.pikokr.chino.listeners.CommandInfo
-import com.github.pikokr.chino.util.edit
 
 object RestartBackend : Command() {
     override fun getInfo(): CommandInfo {
@@ -12,7 +12,7 @@ object RestartBackend : Command() {
     }
     override suspend fun execute(ctx: CommandContext) {
         val msg = ctx reply "재시작중..."
-        Chino.reloadServer()
+        BackendServer.reload()
         ctx reply "재시작 완료!"
     }
 }

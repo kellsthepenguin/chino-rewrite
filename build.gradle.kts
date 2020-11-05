@@ -26,7 +26,6 @@ dependencies {
     runtimeOnly(kotlin("compiler-embeddable"))
     implementation("io.ktor:ktor-server-netty:1.4.0")
     implementation("io.ktor:ktor-server-netty:1.4.0")
-    implementation("com.github.excitement-engineer:ktor-graphql:2.0.0")
     testCompile("junit", "junit", "4.12")
 }
 
