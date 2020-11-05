@@ -9,7 +9,7 @@ object Chino {
     val jda: ShardManager
 
     init {
-        BackendServer.start()
+        BackendServer.reload()
 
         jda = DefaultShardManagerBuilder.createDefault(config.token)
                 .addEventListeners(ListenerRegistry)

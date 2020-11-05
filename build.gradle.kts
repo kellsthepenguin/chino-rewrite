@@ -8,6 +8,8 @@ plugins {
 group = "com.github.pikokr"
 version = "1.0-SNAPSHOT"
 
+val ktorVersion = "1.4.0"
+
 repositories {
     mavenCentral()
     jcenter()
@@ -24,8 +26,10 @@ dependencies {
     implementation(kotlin("script-runtime"))
     implementation(kotlin("scripting-compiler"))
     runtimeOnly(kotlin("compiler-embeddable"))
-    implementation("io.ktor:ktor-server-netty:1.4.0")
-    implementation("io.ktor:ktor-server-netty:1.4.0")
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.+")
+    implementation("io.ktor:ktor-jackson:$ktorVersion")
     testCompile("junit", "junit", "4.12")
 }
 

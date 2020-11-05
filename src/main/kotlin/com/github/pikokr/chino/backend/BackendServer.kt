@@ -1,7 +1,8 @@
 package com.github.pikokr.chino.backend
 
-import com.github.pikokr.chino.Chino
 import io.ktor.application.*
+import io.ktor.features.*
+import io.ktor.jackson.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.engine.*
@@ -13,9 +14,14 @@ object BackendServer {
 
     fun replace() {
         server = embeddedServer(Netty, port = 8080) {
+            install(ContentNegotiation) {
+                jackson {}
+            }
             routing {
                 get("/") {
-                    call.respondText { "테스트" }
+                    call.respond(object {
+                        val hello = "world"
+                    })
                 }
             }
         }
@@ -23,7 +29,7 @@ object BackendServer {
     }
 
     fun stop() {
-        server?.stop(1,5, TimeUnit.SECONDS)
+        server?.stop(20, 20, TimeUnit.MILLISECONDS)
     }
 
     fun reload() {
@@ -34,6 +40,6 @@ object BackendServer {
 
     fun start() {
         if (server != null) replace()
-        server?.start(wait = true)
+        server?.start(wait = false)
     }
 }
