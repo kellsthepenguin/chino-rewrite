@@ -2,6 +2,7 @@ package com.github.pikokr.chino.listeners
 
 import com.github.pikokr.chino.Chino
 import com.github.pikokr.chino.commands.dev.Eval
+import com.github.pikokr.chino.commands.dev.RestartBackend
 import com.github.pikokr.chino.commands.general.Help
 import com.github.pikokr.chino.structs.Listener
 import net.dv8tion.jda.api.events.GenericEvent
@@ -10,7 +11,7 @@ import java.awt.Color
 
 fun commandList() = arrayOf(
         // dev
-        Eval,
+        Eval, RestartBackend,
         // general
         Help)
 

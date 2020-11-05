@@ -34,7 +34,6 @@ object Eval : Command() {
     override fun getInfo(): CommandInfo {
         return CommandInfo("eval", ownerOnly = true, category = "dev")
     }
-
     override suspend fun execute(ctx: CommandContext) {
         if (ctx.args.isEmpty()) {
             ctx reply "내용을 입력해주세요"
