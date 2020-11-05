@@ -30,9 +30,9 @@ private suspend fun execute(ctx: CommandContext, input: String): String {
     return job.toString()
 }
 
-object Kts : Command() {
+object Eval : Command() {
     override fun getInfo(): CommandInfo {
-        return CommandInfo("kts", ownerOnly = true)
+        return CommandInfo("eval", ownerOnly = true, category = "dev")
     }
 
     override suspend fun execute(ctx: CommandContext) {

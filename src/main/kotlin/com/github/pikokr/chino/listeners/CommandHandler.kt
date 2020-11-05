@@ -1,8 +1,7 @@
 package com.github.pikokr.chino.listeners
 
 import com.github.pikokr.chino.Chino
-import com.github.pikokr.chino.commands.dev.Jss
-import com.github.pikokr.chino.commands.dev.Kts
+import com.github.pikokr.chino.commands.dev.Eval
 import com.github.pikokr.chino.commands.general.Help
 import com.github.pikokr.chino.structs.Listener
 import net.dv8tion.jda.api.events.GenericEvent
@@ -11,7 +10,7 @@ import java.awt.Color
 
 fun commandList() = arrayOf(
         // dev
-        Kts, Jss,
+        Eval,
         // general
         Help)
 
