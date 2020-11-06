@@ -16,7 +16,7 @@ export default class ChinoClient extends Client {
             disableMentions: 'everyone'
         })
         this.cmdHandler = new CommandHandler(this, {
-            prefix: '',
+            prefix: config.prefix,
             watch: true,
             dir: path.join(__dirname, '../commands')
         })

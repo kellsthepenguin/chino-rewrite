@@ -5,7 +5,8 @@ import CommandContext from "../../util/command/CommandContext";
 export default class Help extends Command {
     constructor(client: ChinoClient) {
         super(client, {
-            name: '도움말'
+            name: '도움말',
+            aliases: ['help']
         })
     }
 

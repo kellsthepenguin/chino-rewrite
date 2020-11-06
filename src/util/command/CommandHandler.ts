@@ -11,7 +11,7 @@ class CommandHandler extends EventEmitter {
     commandMap: Map<string, Command> = new Map<string, Command>()
     private watcher?: chokidar.FSWatcher
     private readonly dir: string
-    prefix: string|((msg:Message)=>(Promise<string>|string))
+    prefix: string | ((msg: Message) => (Promise<string> | string))
     client: ChinoClient
 
     constructor(client: ChinoClient, {
@@ -29,14 +29,16 @@ class CommandHandler extends EventEmitter {
 
         this.client = client
 
-        this.client.on('message',async msg => {
+        this.client.on('message', async msg => {
             let prefix: string
             if (typeof this.prefix === 'string') prefix = this.prefix
-            else {prefix = await this.prefix(msg)}
+            else {
+                prefix = await this.prefix(msg)
+            }
             if (!msg.content.startsWith(prefix)) return
             const args = msg.content.slice(prefix.length).split(/ +/g)
             const command = args.shift()!
-            const cmd = Array.from(this.commandMap.values()).find(r=>r.options.name === command || r.options.aliases!.includes(command))
+            const cmd = Array.from(this.commandMap.values()).find(r => r.options.name === command || r.options.aliases!.includes(command))
             if (!cmd) return this.emit('commandNotFound', msg)
             const ctx = new CommandContext(this.client, msg, Array.from(args), cmd)
             try {
@@ -52,7 +54,7 @@ class CommandHandler extends EventEmitter {
             throw new Error(`Path ${dir} not found.`)
         }
 
-        this.loadAll().then(() => console.log( 'Listeners load complete'))
+        this.loadAll().then(() => console.log('Listeners load complete'))
 
         if (watch) {
             this.startWatch()
@@ -74,7 +76,7 @@ class CommandHandler extends EventEmitter {
 
         this.emit('load', command)
 
-        console.log( `Loaded command on path ${path1}`)
+        console.log(`Loaded command on path ${path1}`)
     }
 
     unload(path: string) {
@@ -101,7 +103,7 @@ class CommandHandler extends EventEmitter {
                 try {
                     this.load(path.join(directory, value))
                 } catch (e) {
-                    console.log( `Error while loading command with path ${value}: ${e.message}`)
+                    console.log(`Error while loading command with path ${value}: ${e.message}`)
                 }
             }
         }
@@ -112,7 +114,7 @@ class CommandHandler extends EventEmitter {
         this.watcher.on('change', (path1) => {
             this.reload(path1)
         })
-        console.log( 'Commands watch started')
+        console.log('Commands watch started')
     }
 }
 
