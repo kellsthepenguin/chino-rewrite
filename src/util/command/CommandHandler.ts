@@ -52,7 +52,7 @@ class CommandHandler extends EventEmitter {
             throw new Error(`Path ${dir} not found.`)
         }
 
-        this.loadAll().then(() => this.client.emit('log', 'Listeners load complete'))
+        this.loadAll().then(() => console.log( 'Listeners load complete'))
 
         if (watch) {
             this.startWatch()
@@ -74,7 +74,7 @@ class CommandHandler extends EventEmitter {
 
         this.emit('load', command)
 
-        this.client.emit('log', `Loaded command on path ${path1}`)
+        console.log( `Loaded command on path ${path1}`)
     }
 
     unload(path: string) {
@@ -83,7 +83,7 @@ class CommandHandler extends EventEmitter {
     }
 
     reload(path: string) {
-        this.client.emit('log', `Reloading command on path ${path}`)
+        console.log(`Reloading command on path ${path}`)
         try {
             this.unload(path)
         } catch (e) {
@@ -101,7 +101,7 @@ class CommandHandler extends EventEmitter {
                 try {
                     this.load(path.join(directory, value))
                 } catch (e) {
-                    this.client.emit('log', `Error while loading command with path ${value}: ${e.message}`)
+                    console.log( `Error while loading command with path ${value}: ${e.message}`)
                 }
             }
         }
@@ -112,7 +112,7 @@ class CommandHandler extends EventEmitter {
         this.watcher.on('change', (path1) => {
             this.reload(path1)
         })
-        this.client.emit('log', 'Commands watch started')
+        console.log( 'Commands watch started')
     }
 }
 

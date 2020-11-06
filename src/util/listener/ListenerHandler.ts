@@ -76,7 +76,7 @@ class ListenerHandler extends EventEmitter {
         }
 
 
-        this.loadAll().then(() => this.client.emit('log', 'Listeners load complete'))
+        this.loadAll().then(() => console.log('log', 'Listeners load complete'))
 
 
         if (watch) {
@@ -108,7 +108,7 @@ class ListenerHandler extends EventEmitter {
         this.emit('load', listener)
 
 
-        this.client.emit('log', `Loaded listener on path ${path1}`)
+        console.log('log', `Loaded listener on path ${path1}`)
     }
 
 
@@ -120,7 +120,7 @@ class ListenerHandler extends EventEmitter {
 
 
     reload(path: string) {
-        this.client.emit('log', `Reloading listener on path ${path}`)
+        console.log('log', `Reloading listener on path ${path}`)
         try {
             this.unload(path)
         } catch (e) {
@@ -139,7 +139,7 @@ class ListenerHandler extends EventEmitter {
                 try {
                     this.load(path.join(directory, value))
                 } catch (e) {
-                    this.client.emit('log', `Error while loading command with path ${value}: ${e.message}`)
+                    console.log('log', `Error while loading command with path ${value}: ${e.message}`)
                 }
             }
         }
@@ -150,7 +150,7 @@ class ListenerHandler extends EventEmitter {
         this.watcher.on('change', (path1) => {
             this.reload(path1)
         })
-        this.client.emit('log', 'Watch started')
+        console.log('log', 'Watch started')
     }
 }
 

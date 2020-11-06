@@ -23,22 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/common/help.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/listeners/common/Ready.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/command/Command.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/command/CommandContext.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/i18n/I18NRegistry.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/listener/Listener.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/listener/ListenerHandler.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/ChinoClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ChinoClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/listener/ListenerHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/listener/ListenerHandler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +133,7 @@
       <workItem from="1604494524101" duration="1140000" />
       <workItem from="1604530660024" duration="14884000" />
       <workItem from="1604618241873" duration="2229000" />
-      <workItem from="1604644557300" duration="12896000" />
+      <workItem from="1604644557300" duration="12964000" />
     </task>
     <servers />
   </component>
