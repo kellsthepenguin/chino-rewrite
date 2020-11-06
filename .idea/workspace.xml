@@ -23,8 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/locales/ko/common.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.weblate/base/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/base/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/ko/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/locales/common.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +104,7 @@
       <recent name="$PROJECT_DIR$/" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/locales" />
       <recent name="$PROJECT_DIR$/.weblate/base" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/locales/en-US" />
@@ -176,7 +178,7 @@
       <workItem from="1604494524101" duration="1140000" />
       <workItem from="1604530660024" duration="14884000" />
       <workItem from="1604618241873" duration="2229000" />
-      <workItem from="1604644557300" duration="4960000" />
+      <workItem from="1604644557300" duration="5610000" />
     </task>
     <servers />
   </component>
