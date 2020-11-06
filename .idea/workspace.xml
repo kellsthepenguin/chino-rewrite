@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/locales/base/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/base/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/common.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,8 +101,8 @@
       <recent name="$PROJECT_DIR$/" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/locales/en-US" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/locales/en-US" />
     </key>
   </component>
   <component name="RunManager">
@@ -173,7 +173,7 @@
       <workItem from="1604494524101" duration="1140000" />
       <workItem from="1604530660024" duration="14884000" />
       <workItem from="1604618241873" duration="2229000" />
-      <workItem from="1604644557300" duration="3281000" />
+      <workItem from="1604644557300" duration="3364000" />
     </task>
     <servers />
   </component>
