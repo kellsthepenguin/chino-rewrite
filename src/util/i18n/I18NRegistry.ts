@@ -60,10 +60,9 @@ export default class I18NRegistry {
         }
     }
 
-    async getT(lang?: string, msg?: Message): Promise<((key: string, templates?: any) => string) | undefined> {
-        if (!lang && msg) lang = await this.getLang(msg)
+    getTFunc(lang: string): ((key: string, templates?: any) => string) | undefined {
         const mods = this.modules.filter(r => r.lang === lang)
-        if (!mods[0]) return this.getT(this.fallback)
+        if (!mods[0] && this.fallback !== lang) return this.getTFunc(this.fallback)
         return (key, templates=[]) => {
             try {
                 const ns = key.split(':')
@@ -78,14 +77,21 @@ export default class I18NRegistry {
                     if (!current) return key
                 })
 
-                for (const template in Array.from(templates)) {
-                    current = current.split(`{{${template}}}`).join(templates[template])
+                if (typeof current === 'string') {
+                    for (const template in Array.from(templates)) {
+                        current = current.split(`{{${template}}}`).join(templates[template])
+                    }
                 }
                 return current
             } catch (e) {
                 return key
             }
         }
+    }
+
+    async getT(lang?: string, msg?: Message): Promise<((key: string, templates?: any) => string) | undefined> {
+        if (!lang && msg) lang = await this.getLang(msg)
+        return this.getTFunc(lang!)
     }
 
     unload(path: string) {

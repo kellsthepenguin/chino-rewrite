@@ -2,8 +2,8 @@ import ChinoClient from "../ChinoClient";
 import CommandContext from "./CommandContext";
 
 type CommandOpts = {
-    name: string
-    aliases?: string[]
+    id: string
+    aliases?: any
     permissions?: {
         user?: string[]
         client?: string[]
@@ -20,7 +20,6 @@ export default class Command {
         this.bot = client
         this.__path = ''
         this.options = options
-        this.options.aliases = this.options.aliases || []
     }
 
     execute(ctx: CommandContext) {}

@@ -37,8 +37,9 @@ class CommandHandler extends EventEmitter {
             }
             if (!msg.content.startsWith(prefix)) return
             const args = msg.content.slice(prefix.length).split(/ +/g)
+            const lang = await this.client.i18n.getLang(msg)
             const command = args.shift()!
-            const cmd = Array.from(this.commandMap.values()).find(r => r.options.name === command || r.options.aliases!.includes(command))
+            const cmd = Array.from(this.commandMap.values()).find(r => r.options.aliases[lang].includes(command))
             if (!cmd) return this.emit('commandNotFound', msg)
             const ctx = new CommandContext(this.client, msg, Array.from(args), cmd)
             try {
@@ -61,7 +62,7 @@ class CommandHandler extends EventEmitter {
         }
     }
 
-    load(path1: string) {
+    async load(path1: string) {
         let module = require(path1)
         if (module.default) {
             module = module.default
@@ -71,6 +72,25 @@ class CommandHandler extends EventEmitter {
         if (!command) throw new Error(`Command not found on path ${path1}`)
 
         command.__path = path1
+
+        const contents = (await fs.readdir(this.client.i18n.dir)).filter(r=>!r.endsWith('.json'))
+
+        const aliases: any = {}
+
+        try {
+            aliases['ko'] = require('../../../locales/commands.json')[command.options.id]
+        } catch (e) {}
+
+        for (const c of contents) {
+            try {
+                aliases[c] = require(`../../../locales/${c}/commands.json`)[command.options.id]
+            } catch (e) {
+            } finally {
+                aliases[c] = aliases[c] || []
+            }
+        }
+
+        command.options.aliases = aliases
 
         this.commandMap.set(command.__path, command)
 
@@ -84,14 +104,14 @@ class CommandHandler extends EventEmitter {
         delete require.cache[require.resolve(path)]
     }
 
-    reload(path: string) {
+    async reload(path: string) {
         console.log(`Reloading command on path ${path}`)
         try {
             this.unload(path)
         } catch (e) {
             // for not loaded commands
         }
-        this.load(path)
+        await this.load(path)
     }
 
     async loadAll(directory = this.dir) {
@@ -101,7 +121,7 @@ class CommandHandler extends EventEmitter {
                 await this.loadAll(path.join(directory, value))
             } else {
                 try {
-                    this.load(path.join(directory, value))
+                    await this.load(path.join(directory, value))
                 } catch (e) {
                     console.log(`Error while loading command with path ${value}: ${e.message}`)
                 }
@@ -111,8 +131,8 @@ class CommandHandler extends EventEmitter {
 
     private startWatch() {
         this.watcher = chokidar.watch(this.dir)
-        this.watcher.on('change', (path1) => {
-            this.reload(path1)
+        this.watcher.on('change', async (path1) => {
+            await this.reload(path1)
         })
         console.log('Commands watch started')
     }

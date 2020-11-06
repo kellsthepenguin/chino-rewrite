@@ -15,6 +15,12 @@ export default class ChinoClient extends Client {
         super({
             disableMentions: 'everyone'
         })
+        this.i18n = new I18NRegistry(this, {
+            watch: true,
+            dir: path.join(__dirname, '../../locales'),
+            getLang: () => 'en',
+            fallback: 'en'
+        })
         this.cmdHandler = new CommandHandler(this, {
             prefix: config.prefix,
             watch: true,
@@ -23,12 +29,6 @@ export default class ChinoClient extends Client {
         this.listener = new ListenerHandler(this, {
             watch: true,
             dir: path.join(__dirname, '../listeners')
-        })
-        this.i18n = new I18NRegistry(this, {
-            watch: true,
-            dir: path.join(__dirname, '../../locales'),
-            getLang: () => 'en',
-            fallback: 'en'
         })
     }
 
