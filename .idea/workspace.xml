@@ -23,7 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/locales/base/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/common.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/ko/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +84,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/locales" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -97,10 +98,12 @@
       <recent name="com.github.pikokr.chino.listeners" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/locales" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/github/pikokr/chino/commands/dev" />
       <recent name="$PROJECT_DIR$/" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.weblate/base" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/locales/en-US" />
     </key>
@@ -173,7 +176,7 @@
       <workItem from="1604494524101" duration="1140000" />
       <workItem from="1604530660024" duration="14884000" />
       <workItem from="1604618241873" duration="2229000" />
-      <workItem from="1604644557300" duration="3364000" />
+      <workItem from="1604644557300" duration="3897000" />
     </task>
     <servers />
   </component>
