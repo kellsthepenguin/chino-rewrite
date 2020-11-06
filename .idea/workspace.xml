@@ -23,11 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config.inc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/common/help.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/listeners/common/Ready.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/command/Command.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/command/CommandContext.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/i18n/I18NRegistry.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/listener/Listener.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/listener/ListenerHandler.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ChinoClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ChinoClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +99,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/index.ts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -116,56 +127,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="chinobot-rewrite [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="assemble" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+    <configuration name="index.ts" type="NodeJSConfigurationType" nameIsGenerated="true" node-parameters="-r ts-node/register" path-to-js-file="src/index.ts" working-dir="$PROJECT_DIR$">
       <method v="2" />
-    </configuration>
-    <configuration name="chinobot-rewrite [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="chinobot-rewrite.main" />
-      <option name="VM_PARAMETERS" value="-XX:HotswapAgent=external -Dnashorn.args=--no-deprecation-warning" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.github.pikokr.chino.MainKt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/test" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -183,7 +146,7 @@
       <workItem from="1604494524101" duration="1140000" />
       <workItem from="1604530660024" duration="14884000" />
       <workItem from="1604618241873" duration="2229000" />
-      <workItem from="1604644557300" duration="8449000" />
+      <workItem from="1604644557300" duration="12896000" />
     </task>
     <servers />
   </component>
@@ -211,10 +174,10 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="499" y="122" width="1024" height="847" key="#Project_Structure/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604475593483" />
-    <state x="474" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604488961226">
+    <state x="474" y="203" width="1084" height="808" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604666707666">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state x="474" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604488961226" />
+    <state x="474" y="203" width="1084" height="808" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604666707666" />
     <state x="638" y="347" width="626" height="418" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604578999676">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
@@ -227,50 +190,82 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="693" y="300" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604573087882" />
-    <state x="799" y="303" width="424" height="486" key="FileChooserDialogImpl" timestamp="1604475590375">
+    <state x="799" y="303" width="424" height="486" key="FileChooserDialogImpl" timestamp="1604666698140">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state x="799" y="303" width="424" height="486" key="FileChooserDialogImpl/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604475590375" />
-    <state width="1866" height="314" key="GridCell.Tab.0.bottom" timestamp="1604643669565">
+    <state x="799" y="303" width="424" height="486" key="FileChooserDialogImpl/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604666698140" />
+    <state width="1866" height="311" key="GridCell.Tab.0.bottom" timestamp="1604669216687">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="314" key="GridCell.Tab.0.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604643669565" />
-    <state width="1866" height="314" key="GridCell.Tab.0.center" timestamp="1604643669564">
+    <state width="1866" height="311" key="GridCell.Tab.0.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.0.center" timestamp="1604669216687">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="314" key="GridCell.Tab.0.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604643669564" />
-    <state width="1866" height="314" key="GridCell.Tab.0.left" timestamp="1604643669564">
+    <state width="1866" height="311" key="GridCell.Tab.0.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.0.left" timestamp="1604669216687">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="314" key="GridCell.Tab.0.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604643669564" />
-    <state width="1866" height="314" key="GridCell.Tab.0.right" timestamp="1604643669565">
+    <state width="1866" height="311" key="GridCell.Tab.0.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.0.right" timestamp="1604669216687">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="314" key="GridCell.Tab.0.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604643669565" />
-    <state width="1866" height="314" key="GridCell.Tab.1.bottom" timestamp="1604643669565">
+    <state width="1866" height="311" key="GridCell.Tab.0.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.1.bottom" timestamp="1604669216687">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="314" key="GridCell.Tab.1.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604643669565" />
-    <state width="1866" height="314" key="GridCell.Tab.1.center" timestamp="1604643669565">
+    <state width="1866" height="311" key="GridCell.Tab.1.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.1.center" timestamp="1604669216687">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="314" key="GridCell.Tab.1.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604643669565" />
-    <state width="1866" height="314" key="GridCell.Tab.1.left" timestamp="1604643669565">
+    <state width="1866" height="311" key="GridCell.Tab.1.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.1.left" timestamp="1604669216687">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="314" key="GridCell.Tab.1.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604643669565" />
-    <state width="1866" height="314" key="GridCell.Tab.1.right" timestamp="1604643669565">
+    <state width="1866" height="311" key="GridCell.Tab.1.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.1.right" timestamp="1604669216687">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="314" key="GridCell.Tab.1.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604643669565" />
+    <state width="1866" height="311" key="GridCell.Tab.1.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.2.bottom" timestamp="1604669216688">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1866" height="311" key="GridCell.Tab.2.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216688" />
+    <state width="1866" height="311" key="GridCell.Tab.2.center" timestamp="1604669216687">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1866" height="311" key="GridCell.Tab.2.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.2.left" timestamp="1604669216687">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1866" height="311" key="GridCell.Tab.2.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216687" />
+    <state width="1866" height="311" key="GridCell.Tab.2.right" timestamp="1604669216688">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1866" height="311" key="GridCell.Tab.2.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216688" />
+    <state width="1866" height="311" key="GridCell.Tab.3.bottom" timestamp="1604669216688">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1866" height="311" key="GridCell.Tab.3.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216688" />
+    <state width="1866" height="311" key="GridCell.Tab.3.center" timestamp="1604669216688">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1866" height="311" key="GridCell.Tab.3.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216688" />
+    <state width="1866" height="311" key="GridCell.Tab.3.left" timestamp="1604669216688">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1866" height="311" key="GridCell.Tab.3.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216688" />
+    <state width="1866" height="311" key="GridCell.Tab.3.right" timestamp="1604669216688">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1866" height="311" key="GridCell.Tab.3.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604669216688" />
     <state x="363" y="198" width="1022" height="732" key="SettingsEditor" timestamp="1604473946518">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="363" y="198" width="1022" height="732" key="SettingsEditor/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604473946518" />
-    <state x="485" y="222" width="939" height="722" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604486324463">
+    <state x="485" y="222" width="939" height="722" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604668498908">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state x="485" y="222" width="939" height="722" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604486324463" />
+    <state x="485" y="222" width="939" height="722" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604668498908" />
     <state x="554" y="86" width="802" height="937" key="new project wizard" timestamp="1604643664293">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
@@ -279,9 +274,9 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="538" y="257" key="run.anything.popup/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604475760989" />
-    <state x="679" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1604568590304">
+    <state x="679" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1604668043376">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state x="679" y="264" width="672" height="678" key="search.everywhere.popup/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604568590304" />
+    <state x="679" y="264" width="672" height="678" key="search.everywhere.popup/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604668043376" />
   </component>
 </project>
