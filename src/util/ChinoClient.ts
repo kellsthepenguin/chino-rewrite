@@ -4,12 +4,14 @@ import path from "path";
 import ListenerHandler from "./listener/ListenerHandler";
 import CommandHandler from "./command/CommandHandler";
 import I18NRegistry from "./i18n/I18NRegistry";
+import Knex from "knex";
 
 export default class ChinoClient extends Client {
     owners: string[] = []
     listener: ListenerHandler
     cmdHandler: CommandHandler
     i18n: I18NRegistry
+    db: Knex
 
     constructor() {
         super({
@@ -30,6 +32,7 @@ export default class ChinoClient extends Client {
             watch: true,
             dir: path.join(__dirname, '../listeners')
         })
+        this.db = Knex(config.db)
     }
 
     async start() {
