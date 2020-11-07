@@ -17,6 +17,7 @@ export default class CommandContext {
     bot: ChinoClient
     chn: TextChannel|DMChannel|NewsChannel
     author: User
+    prefix: string
     member: GuildMember|null
     t: ((key: string, templates?: any) => string)
     constructor(bot: ChinoClient, msg: Message, args: string[], cmd: Command, t: ((key: string, templates?: any) => string), prefix: string) {
@@ -27,6 +28,7 @@ export default class CommandContext {
         this.chn = msg.channel
         this.author = msg.author
         this.member = msg.member
+        this.prefix = prefix
         this.t = t
     }
     embed() {
