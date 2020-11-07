@@ -9,6 +9,7 @@ type CommandOpts = {
         client?: string[]
     }
     category?: string
+    ownerOnly?: boolean
 }
 
 export default class Command {
@@ -20,6 +21,7 @@ export default class Command {
         this.bot = client
         this.__path = ''
         this.options = options
+        this.options.category = this.options.category || 'general'
     }
 
     execute(ctx: CommandContext) {}

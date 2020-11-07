@@ -19,7 +19,7 @@ export default class CommandContext {
     author: User
     member: GuildMember|null
     t: ((key: string, templates?: any) => string)
-    constructor(bot: ChinoClient, msg: Message, args: string[], cmd: Command, t: ((key: string, templates?: any) => string)) {
+    constructor(bot: ChinoClient, msg: Message, args: string[], cmd: Command, t: ((key: string, templates?: any) => string), prefix: string) {
         this.msg = msg
         this.cmd = cmd
         this.bot = bot

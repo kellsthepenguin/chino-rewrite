@@ -3,6 +3,10 @@
     "name": "치노"
   },
   "help": {
-    "title": "치노봇 도움말!"
+    "title": "치노봇 도움말!",
+    "categories": {
+      "general": "일반",
+      "dev": "개발자용 명령어"
+    }
   }
 }

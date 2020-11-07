@@ -4,11 +4,11 @@ import ChinoClient from "../ChinoClient";
 import chokidar from 'chokidar'
 import path from "path";
 import fs from 'fs/promises'
-import {Message} from "discord.js";
+import {Collection, Message, MessageEmbed} from "discord.js";
 import CommandContext from "./CommandContext";
 
 class CommandHandler extends EventEmitter {
-    commandMap: Map<string, Command> = new Map<string, Command>()
+    commandMap: Collection<string, Command> = new Collection<string, Command>()
     private watcher?: chokidar.FSWatcher
     private readonly dir: string
     prefix: string | ((msg: Message) => (Promise<string> | string))
@@ -59,10 +59,15 @@ class CommandHandler extends EventEmitter {
 
                 cmd.options.aliases = aliases
             }
-            const cmd = Array.from(this.commandMap.values()).find(r => r.options.aliases[lang].includes(command))
+            const cmd = Array.from(this.commandMap.values()).find(r => (r.options.aliases[lang] || [r.options.id]).includes(command))
             if (!cmd) return this.emit('commandNotFound', msg)
             const t = await this.client.i18n.getT(undefined, msg)
-            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t)
+            if (cmd.options.ownerOnly) {
+                if (!this.client.owners.includes(msg.author.id)) {
+                    return msg.reply(new MessageEmbed().setColor('RED').setTitle(t('errors:permissions.owner.title')).setDescription(t('errors:permissions.owner.desc')))
+                }
+            }
+            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t, prefix)
             try {
                 await cmd.execute(ctx)
             } catch (e) {
