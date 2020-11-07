@@ -3,7 +3,7 @@ import ChinoClient from "../../util/ChinoClient";
 import CommandContext from "../../util/command/CommandContext";
 import {inspect} from "util";
 
-export default class Eval extends Command {
+export default class Exec extends Command {
     constructor(client: ChinoClient) {
         super(client, {
             id: 'exec',
