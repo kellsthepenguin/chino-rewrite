@@ -6,6 +6,7 @@ export default class Help extends Command {
     constructor(client: ChinoClient) {
         super(client, {
             id: 'help',
+            category: 'common'
         })
     }
 

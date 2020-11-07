@@ -20,7 +20,10 @@ export default class ChinoClient extends Client {
         this.i18n = new I18NRegistry(this, {
             watch: true,
             dir: path.join(__dirname, '../../locales'),
-            getLang: () => 'ko',
+            getLang: async (msg) => {
+                const u = (await this.db('users').where({id: msg.author.id}))[0]
+                return u?.locale || 'ko'
+            },
             fallback: 'ko'
         })
         this.cmdHandler = new CommandHandler(this, {

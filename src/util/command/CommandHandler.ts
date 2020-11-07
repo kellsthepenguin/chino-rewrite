@@ -61,13 +61,18 @@ class CommandHandler extends EventEmitter {
             }
             const cmd = Array.from(this.commandMap.values()).find(r => (r.options.aliases[lang] || [r.options.id]).includes(command))
             if (!cmd) return this.emit('commandNotFound', msg)
+            const u = (await this.client.db('users').where({id:msg.author.id}).limit(1))[0]
             const t = await this.client.i18n.getT(undefined, msg)
+            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t, prefix)
+            if (!u) {
+                const reg = await require('../registration/register').default(ctx)
+                if (!reg) return
+            }
             if (cmd.options.ownerOnly) {
                 if (!this.client.owners.includes(msg.author.id)) {
                     return msg.reply(new MessageEmbed().setColor('RED').setTitle(t('errors:permissions.owner.title')).setDescription(t('errors:permissions.owner.desc')))
                 }
             }
-            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t, prefix)
             try {
                 await cmd.execute(ctx)
             } catch (e) {

@@ -5,7 +5,7 @@
     "client": "pg",
     "connection": {
       "host": "",
-      "port": 5332,
+      "port": 5432,
       "user": "",
       "password": "",
       "database": ""

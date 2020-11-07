@@ -51,18 +51,18 @@ export default class I18NRegistry {
             if (this.modules.find(r => r.__path === path1)) return true
             module.__path = path1
             const split = path1.replace(this.dir, '').split('/')
-            module.lang = split[split.length-2]
+            module.__lang = split[split.length-2]
             const fullPath = path1.split('.')[path1.split('.').length - 2].split('/')
             module.ns = fullPath[fullPath.length - 1]
             this.modules.push(module)
-            console.log(`Loaded i18n namespace ${module.ns} on lng ${module.lang}`)
+            console.log(`Loaded i18n namespace ${module.ns} on lng ${module.__lang}`)
         } catch (e) {
             console.log(`Error on loading locale on path ${path1}: ${e.stack}`)
         }
     }
 
     getTFunc(lang: string): ((key: string, templates?: any) => string) {
-        const mods = this.modules.filter(r => r.lang === lang)
+        const mods = this.modules.filter(r => r.__lang === lang)
         if (!mods[0] && this.fallback !== lang) return this.getTFunc(this.fallback)
         return (key, templates=[]) => {
             try {
@@ -79,7 +79,7 @@ export default class I18NRegistry {
                 })
 
                 if (typeof current === 'string') {
-                    for (const template in Array.from(templates)) {
+                    for (const template in templates) {
                         current = current.split(`{{${template}}}`).join(templates[template])
                     }
                 }

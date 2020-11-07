@@ -5,7 +5,7 @@
     "help": {
         "title": "Chino bot",
         "categories": {
-            "general": "General",
+            "common": "General",
             "dev": "Developer-only commands"
         }
     }

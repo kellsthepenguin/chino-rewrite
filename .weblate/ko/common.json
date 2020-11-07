@@ -5,8 +5,28 @@
   "help": {
     "title": "치노봇 도움말!",
     "categories": {
-      "general": "일반",
+      "common": "일반",
       "dev": "개발자용 명령어"
+    }
+  },
+  "register": {
+    "title": "Register",
+    "desc": "You should register to use chino's services!\nYou can register with clicking :white_check_mark: reaction!",
+    "success": {
+      "title": "Success!",
+      "desc": "You can use chino's service now.\nIf you are not korean, you can select other languages with {{prefix}}lang command!"
+    },
+    "cancelled": {
+      "title": "Cancelled",
+      "desc": "You cancelled the registration process."
+    }
+  },
+  "config": {
+    "lang": {
+      "success": {
+        "title": "언어 변경 완료",
+        "desc": "이제 한국어로 치노봇을 이용하실 수 있어요!"
+      }
     }
   }
 }
