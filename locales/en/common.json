@@ -11,5 +11,13 @@
     },
     "register": {
         "title": "Register"
+    },
+    "config": {
+        "lang": {
+            "success": {
+                "title": "Changed language",
+                "desc": "Now you can use chino bot with English!"
+            }
+        }
     }
 }
