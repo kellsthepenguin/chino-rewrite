@@ -18,8 +18,8 @@ export default class ChinoClient extends Client {
         this.i18n = new I18NRegistry(this, {
             watch: true,
             dir: path.join(__dirname, '../../locales'),
-            getLang: () => 'en',
-            fallback: 'en'
+            getLang: () => 'ko',
+            fallback: 'ko'
         })
         this.cmdHandler = new CommandHandler(this, {
             prefix: config.prefix,

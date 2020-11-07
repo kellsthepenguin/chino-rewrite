@@ -39,9 +39,30 @@ class CommandHandler extends EventEmitter {
             const args = msg.content.slice(prefix.length).split(/ +/g)
             const lang = await this.client.i18n.getLang(msg)
             const command = args.shift()!
+            for (const cmd of this.commandMap.values()) {
+                const contents = (await fs.readdir(this.client.i18n.dir)).filter(r=>!r.endsWith('.json'))
+
+                const aliases: any = {}
+
+                try {
+                    aliases['ko'] = require('../../../.weblate/ko/commands.json')[cmd.options.id].split(';')
+                } catch (e) {}
+
+                for (const c of contents) {
+                    try {
+                        aliases[c] = require(`../../../locales/${c}/commands.json`)[cmd.options.id].split(';')
+                    } catch (e) {
+                    } finally {
+                        aliases[c] = aliases[c] || []
+                    }
+                }
+
+                cmd.options.aliases = aliases
+            }
             const cmd = Array.from(this.commandMap.values()).find(r => r.options.aliases[lang].includes(command))
             if (!cmd) return this.emit('commandNotFound', msg)
-            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd)
+            const t = await this.client.i18n.getT(undefined, msg)
+            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t)
             try {
                 await cmd.execute(ctx)
             } catch (e) {
@@ -72,25 +93,6 @@ class CommandHandler extends EventEmitter {
         if (!command) throw new Error(`Command not found on path ${path1}`)
 
         command.__path = path1
-
-        const contents = (await fs.readdir(this.client.i18n.dir)).filter(r=>!r.endsWith('.json'))
-
-        const aliases: any = {}
-
-        try {
-            aliases['ko'] = require('../../../.weblate/ko/commands.json')[command.options.id]
-        } catch (e) {}
-
-        for (const c of contents) {
-            try {
-                aliases[c] = require(`../../../locales/${c}/commands.json`)[command.options.id]
-            } catch (e) {
-            } finally {
-                aliases[c] = aliases[c] || []
-            }
-        }
-
-        command.options.aliases = aliases
 
         this.commandMap.set(command.__path, command)
 

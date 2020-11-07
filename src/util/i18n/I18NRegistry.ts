@@ -26,7 +26,7 @@ export default class I18NRegistry {
         this.getLang = getLang
         this.fallback = fallback
 
-        this.loadAll(dir).then(() => console.log('Loaded locales.'))
+        this.loadAll(dir).then(()=>this.loadAll(path.resolve(path.join(__dirname, '../../../.weblate/ko')))).then(() => console.log('Loaded locales.'))
 
         if (watch) {
             this.startWatching()
@@ -50,7 +50,8 @@ export default class I18NRegistry {
             const module = require(path1)
             if (this.modules.find(r => r.__path === path1)) return true
             module.__path = path1
-            module.lang = path1.replace(this.dir, '').split('/')[1]
+            const split = path1.replace(this.dir, '').split('/')
+            module.lang = split[split.length-2]
             const fullPath = path1.split('.')[path1.split('.').length - 2].split('/')
             module.ns = fullPath[fullPath.length - 1]
             this.modules.push(module)
@@ -60,7 +61,7 @@ export default class I18NRegistry {
         }
     }
 
-    getTFunc(lang: string): ((key: string, templates?: any) => string) | undefined {
+    getTFunc(lang: string): ((key: string, templates?: any) => string) {
         const mods = this.modules.filter(r => r.lang === lang)
         if (!mods[0] && this.fallback !== lang) return this.getTFunc(this.fallback)
         return (key, templates=[]) => {
@@ -82,14 +83,14 @@ export default class I18NRegistry {
                         current = current.split(`{{${template}}}`).join(templates[template])
                     }
                 }
-                return current
+                return current || key
             } catch (e) {
                 return key
             }
         }
     }
 
-    async getT(lang?: string, msg?: Message): Promise<((key: string, templates?: any) => string) | undefined> {
+    async getT(lang?: string, msg?: Message): Promise<((key: string, templates?: any) => string)> {
         if (!lang && msg) lang = await this.getLang(msg)
         return this.getTFunc(lang!)
     }
@@ -106,7 +107,7 @@ export default class I18NRegistry {
     }
 
     startWatching() {
-        this.watcher = chokidar.watch(this.dir)
+        this.watcher = chokidar.watch([this.dir, path.resolve(path.join(__dirname, '../../../.weblate/ko'))])
         this.watcher.on('change', (path1) => {
             this.reload(path1)
         })

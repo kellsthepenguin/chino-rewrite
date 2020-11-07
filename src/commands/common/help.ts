@@ -10,6 +10,6 @@ export default class Help extends Command {
     }
 
     async execute(ctx: CommandContext) {
-        await ctx.chn.send('도움말')
+        await ctx.chn.send(ctx.embed().setTitle(ctx.t('common:help.title')))
     }
 }

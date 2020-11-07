@@ -3,7 +3,7 @@ import {
     GuildMember,
     Message,
     NewsChannel,
-    PartialTextBasedChannelFields,
+    MessageEmbed,
     TextChannel,
     User
 } from "discord.js";
@@ -18,7 +18,8 @@ export default class CommandContext {
     chn: TextChannel|DMChannel|NewsChannel
     author: User
     member: GuildMember|null
-    constructor(bot: ChinoClient, msg: Message, args: string[], cmd: Command) {
+    t: ((key: string, templates?: any) => string)
+    constructor(bot: ChinoClient, msg: Message, args: string[], cmd: Command, t: ((key: string, templates?: any) => string)) {
         this.msg = msg
         this.cmd = cmd
         this.bot = bot
@@ -26,5 +27,9 @@ export default class CommandContext {
         this.chn = msg.channel
         this.author = msg.author
         this.member = msg.member
+        this.t = t
+    }
+    embed() {
+        return new MessageEmbed().setColor('BLUE').setFooter(this.msg.author.tag, this.msg.author.displayAvatarURL({dynamic: true}))
     }
 }
