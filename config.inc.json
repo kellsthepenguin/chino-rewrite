@@ -1,4 +1,14 @@
 {
   "token": "",
-  "prefix": "."
+  "prefix": ".",
+  "db": {
+    "client": "pg",
+    "connection": {
+      "host": "",
+      "port": 5332,
+      "user": "",
+      "password": "",
+      "database": ""
+    }
+  }
 }
