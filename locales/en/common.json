@@ -8,5 +8,8 @@
             "common": "General",
             "dev": "Developer-only commands"
         }
+    },
+    "register": {
+        "title": "Register"
     }
 }
