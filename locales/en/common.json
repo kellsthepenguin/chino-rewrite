@@ -1,5 +1,12 @@
 {
     "about": {
         "name": "Chino"
+    },
+    "help": {
+        "title": "Chino bot",
+        "categories": {
+            "general": "General",
+            "dev": "Developer-only commands"
+        }
     }
 }
