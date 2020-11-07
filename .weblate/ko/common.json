@@ -9,18 +9,6 @@
       "dev": "개발자용 명령어"
     }
   },
-  "register": {
-    "title": "Register",
-    "desc": "You should register to use chino's services!\nYou can register with clicking :white_check_mark: reaction!",
-    "success": {
-      "title": "Success!",
-      "desc": "You can use chino's service now.\nIf you are not korean, you can select other languages with {{prefix}}lang command!"
-    },
-    "cancelled": {
-      "title": "Cancelled",
-      "desc": "You cancelled the registration process."
-    }
-  },
   "config": {
     "lang": {
       "success": {
