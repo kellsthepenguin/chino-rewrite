@@ -78,7 +78,7 @@ class CommandHandler extends EventEmitter {
         const aliases: any = {}
 
         try {
-            aliases['ko'] = require('../../../locales/commands.json')[command.options.id]
+            aliases['ko'] = require('../../../.weblate/ko/commands.json')[command.options.id]
         } catch (e) {}
 
         for (const c of contents) {

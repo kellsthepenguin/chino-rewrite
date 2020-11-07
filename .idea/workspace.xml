@@ -23,14 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/locales/commands.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locales/en/commands.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/common/help.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/common/help.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/ChinoClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ChinoClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/command/Command.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/command/Command.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/ko/commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/ko/common.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/i18n/I18NRegistry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/i18n/I18NRegistry.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +97,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.weblate" />
+      <recent name="$PROJECT_DIR$/locales/ko" />
+      <recent name="$PROJECT_DIR$/locales" />
+      <recent name="$PROJECT_DIR$/.weblate/base" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.github.pikokr.chino.commands.dev" />
       <recent name="com.github.pikokr.chino.listeners" />
@@ -110,12 +113,6 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/github/pikokr/chino/commands/dev" />
       <recent name="$PROJECT_DIR$/" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/locales" />
-      <recent name="$PROJECT_DIR$/.weblate/base" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/locales/en-US" />
     </key>
   </component>
   <component name="RunManager">
@@ -139,6 +136,7 @@
       <workItem from="1604530660024" duration="14884000" />
       <workItem from="1604618241873" duration="2229000" />
       <workItem from="1604644557300" duration="15386000" />
+      <workItem from="1604706991483" duration="965000" />
     </task>
     <servers />
   </component>
@@ -186,38 +184,38 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="799" y="303" width="424" height="486" key="FileChooserDialogImpl/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604666698140" />
-    <state width="1866" height="311" key="GridCell.Tab.0.bottom" timestamp="1604672282025">
+    <state width="1866" height="311" key="GridCell.Tab.0.bottom" timestamp="1604708197365">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="311" key="GridCell.Tab.0.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604672282025" />
-    <state width="1866" height="311" key="GridCell.Tab.0.center" timestamp="1604672282025">
+    <state width="1866" height="311" key="GridCell.Tab.0.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604708197365" />
+    <state width="1866" height="311" key="GridCell.Tab.0.center" timestamp="1604708197365">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="311" key="GridCell.Tab.0.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604672282025" />
-    <state width="1866" height="311" key="GridCell.Tab.0.left" timestamp="1604672282025">
+    <state width="1866" height="311" key="GridCell.Tab.0.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604708197365" />
+    <state width="1866" height="311" key="GridCell.Tab.0.left" timestamp="1604708197365">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="311" key="GridCell.Tab.0.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604672282025" />
-    <state width="1866" height="311" key="GridCell.Tab.0.right" timestamp="1604672282025">
+    <state width="1866" height="311" key="GridCell.Tab.0.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604708197365" />
+    <state width="1866" height="311" key="GridCell.Tab.0.right" timestamp="1604708197365">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="311" key="GridCell.Tab.0.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604672282025" />
-    <state width="1866" height="311" key="GridCell.Tab.1.bottom" timestamp="1604672282025">
+    <state width="1866" height="311" key="GridCell.Tab.0.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604708197365" />
+    <state width="1866" height="311" key="GridCell.Tab.1.bottom" timestamp="1604708199357">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="311" key="GridCell.Tab.1.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604672282025" />
-    <state width="1866" height="311" key="GridCell.Tab.1.center" timestamp="1604672282025">
+    <state width="1866" height="311" key="GridCell.Tab.1.bottom/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604708199357" />
+    <state width="1866" height="311" key="GridCell.Tab.1.center" timestamp="1604708199357">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="311" key="GridCell.Tab.1.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604672282025" />
-    <state width="1866" height="311" key="GridCell.Tab.1.left" timestamp="1604672282025">
+    <state width="1866" height="311" key="GridCell.Tab.1.center/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604708199357" />
+    <state width="1866" height="311" key="GridCell.Tab.1.left" timestamp="1604708199357">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="311" key="GridCell.Tab.1.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604672282025" />
-    <state width="1866" height="311" key="GridCell.Tab.1.right" timestamp="1604672282025">
+    <state width="1866" height="311" key="GridCell.Tab.1.left/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604708199357" />
+    <state width="1866" height="311" key="GridCell.Tab.1.right" timestamp="1604708199357">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="1866" height="311" key="GridCell.Tab.1.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604672282025" />
+    <state width="1866" height="311" key="GridCell.Tab.1.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604708199357" />
     <state width="1866" height="311" key="GridCell.Tab.2.bottom" timestamp="1604672282025">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
