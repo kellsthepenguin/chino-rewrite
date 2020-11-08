@@ -14,6 +14,14 @@ export default class Play extends Command {
     }
 
     async execute(ctx: CommandContext) {
-        await ctx.msg.reply('테스트')
+        const t = ctx.t
+        if (!ctx.args.length) return ctx.chn.send(ctx.embed().setTitle(t('common:commands.audio.play.usage.title')).setDescription(
+            t('common:commands.audio.play.usage.desc', {
+                prefix: ctx.prefix
+            })
+        ))
+        const search = ctx.args.join(' ')
+        const res = await this.bot.audio.search(search, ctx.author)
+        console.log(res)
     }
 }
