@@ -1,7 +1,6 @@
 import config from '../../config.json'
 import {Client, User} from "discord.js";
 import path from "path";
-import ListenerHandler from "./listener/ListenerHandler";
 import CommandHandler from "./command/CommandHandler";
 import I18NRegistry from "./i18n/I18NRegistry";
 import Knex from "knex";
@@ -9,7 +8,6 @@ import AudioManager from "./audio/AudioManager";
 
 export default class ChinoClient extends Client {
     owners: string[] = []
-    listener: ListenerHandler
     cmdHandler: CommandHandler
     i18n: I18NRegistry
     db: Knex
@@ -34,11 +32,8 @@ export default class ChinoClient extends Client {
             watch: true,
             dir: path.join(__dirname, '../commands')
         })
-        this.listener = new ListenerHandler(this, {
-            watch: true,
-            dir: path.join(__dirname, '../listeners')
-        })
         this.db = Knex(config.db)
+        this.on('ready', () => require('../listeners/common/Ready').default(this))
     }
 
     async start() {

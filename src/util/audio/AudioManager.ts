@@ -10,7 +10,8 @@ export default class AudioManager extends Manager {
             send(id: string, payload: Payload) {
                 const guild = client.guilds.cache.get(id)
                 if (guild) guild.shard.send(payload)
-            }
+            },
+            nodes: config.audio.nodes
         })
         this.client = client
         this.setupEvents()
@@ -20,5 +21,7 @@ export default class AudioManager extends Manager {
         this.on('playerCreate', player => console.log(`[MUSIC] Player created in guild ${player.guild}`))
         this.on('playerMove', (player, oldChannel, newChannel) => console.log(`[MUSIC] Player moved, guild: ${player.guild} old channel: ${oldChannel} new channel: ${newChannel}`))
         this.on('playerDestroy', player => console.log(`[MUSIC] Player destroyed in guild ${player.guild}`))
+        this.on('nodeConnect', node => console.log(`[MUSIC] Connected to node ${node.options.host}:${node.options.port}`))
+        this.on('nodeCreate', node => console.log(`[MUSIC] Created node ${node.options.host}:${node.options.port}`))
     }
 }

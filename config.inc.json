@@ -12,12 +12,6 @@
     }
   },
   "audio": {
-    "nodes": [
-      {
-        "host": "airbap.tk",
-        "port": 2333,
-        "password": "youshallnotpass"
-      }
-    ]
+    "nodes": []
   }
 }

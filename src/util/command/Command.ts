@@ -10,6 +10,10 @@ type CommandOpts = {
     }
     category?: string
     ownerOnly?: boolean
+    audio?: {
+        join?: boolean
+    }
+    guildOnly?: boolean
 }
 
 export default class Command {
@@ -22,6 +26,7 @@ export default class Command {
         this.__path = ''
         this.options = options
         this.options.category = this.options.category || 'general'
+        if (options.audio) this.options.guildOnly = true
     }
 
     execute(ctx: CommandContext) {}

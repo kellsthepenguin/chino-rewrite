@@ -6,11 +6,14 @@ export default class Play extends Command {
     constructor(client: ChinoClient) {
         super(client, {
             id: 'play',
-            category: 'audio'
+            category: 'audio',
+            audio: {
+                join: true
+            }
         });
     }
 
-    execute(ctx: CommandContext) {
-        ctx.bot
+    async execute(ctx: CommandContext) {
+        await ctx.msg.reply('테스트')
     }
 }

@@ -73,6 +73,23 @@ class CommandHandler extends EventEmitter {
                     return msg.reply(new MessageEmbed().setColor('RED').setTitle(t('errors:permissions.owner.title')).setDescription(t('errors:permissions.owner.desc')))
                 }
             }
+            if (cmd.options.guildOnly && !msg.guild) {
+                return msg.reply(new MessageEmbed().setColor('RED').setTitle(t('errors:only.guild.title')).setDescription(t('errors:only.guild.desc')))
+            }
+            if (cmd.options.audio) {
+                if (cmd.options.audio.join) {
+                    const player = this.client.audio.players.get(msg.guild!.id)
+                    if (player) {
+                        if (player.voiceChannel !== msg.member!.voice.channelID) {
+                            return msg.reply(new MessageEmbed().setColor('RED').setTitle(t('errors:audio.join.already.title')).setDescription(t('errors:audio.join.already.desc')))
+                        }
+                    } else {
+                        if (!msg.member!.voice.channelID) {
+                            return msg.reply(new MessageEmbed().setColor('RED').setTitle(t('errors:audio.join.title')).setDescription(t('errors:audio.join.desc')))
+                        }
+                    }
+                }
+            }
             try {
                 await cmd.execute(ctx)
             } catch (e) {
