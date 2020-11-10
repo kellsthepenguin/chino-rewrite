@@ -12,6 +12,7 @@ type CommandOpts = {
     ownerOnly?: boolean
     audio?: {
         join?: boolean
+        player?: boolean
     }
     guildOnly?: boolean
 }

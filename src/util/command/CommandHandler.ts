@@ -89,6 +89,16 @@ class CommandHandler extends EventEmitter {
                         }
                     }
                 }
+                if (cmd.options.audio.player) {
+                    const player = this.client.audio.players.get(msg.guild!.id)
+                    if (!player) {
+                        return msg.reply(new MessageEmbed({
+                            color: 'RED',
+                            title: t('errors:audio.player.title'),
+                            description: t('errors:audio.player.desc')
+                        }))
+                    }
+                }
             }
             try {
                 await cmd.execute(ctx)
