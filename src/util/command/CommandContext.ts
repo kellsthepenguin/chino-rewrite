@@ -9,6 +9,7 @@ import {
 } from "discord.js";
 import Command from "./Command";
 import ChinoClient from "../ChinoClient";
+import {Player} from "erela.js";
 
 export default class CommandContext {
     msg: Message
@@ -19,6 +20,7 @@ export default class CommandContext {
     author: User
     prefix: string
     member: GuildMember|null
+    audio?: Player
     t: ((key: string, templates?: any) => string)
     constructor(bot: ChinoClient, msg: Message, args: string[], cmd: Command, t: ((key: string, templates?: any) => string), prefix: string) {
         this.msg = msg
@@ -30,6 +32,9 @@ export default class CommandContext {
         this.member = msg.member
         this.prefix = prefix
         this.t = t
+        if (msg.guild) {
+            this.audio = this.bot.audio.players.get(msg.guild.id)
+        }
     }
     embed() {
         return new MessageEmbed().setColor('BLUE').setFooter(this.msg.author.tag, this.msg.author.displayAvatarURL({dynamic: true}))

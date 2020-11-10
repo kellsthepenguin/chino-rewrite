@@ -14,6 +14,7 @@ export default class AudioManager extends Manager {
             nodes: config.audio.nodes
         })
         this.client = client
+        client.on('raw', payload => this.updateVoiceState(payload))
         this.setupEvents()
     }
 
@@ -23,5 +24,7 @@ export default class AudioManager extends Manager {
         this.on('playerDestroy', player => console.log(`[MUSIC] Player destroyed in guild ${player.guild}`))
         this.on('nodeConnect', node => console.log(`[MUSIC] Connected to node ${node.options.host}:${node.options.port}`))
         this.on('nodeCreate', node => console.log(`[MUSIC] Created node ${node.options.host}:${node.options.port}`))
+        this.on('trackStuck', (player, track, payload) => console.log(`[MUSIC] Track stuck on guild ${player.guild}, track: ${track.title}: ${payload.thresholdMs}`))
+        this.on('trackError', (player, track, payload) => console.log(`[MUSIC] Error on playing track ${track.title} on guild ${player.guild}: ${payload.error}`))
     }
 }

@@ -24,10 +24,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/audio/play.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/audio/play.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/i18n/I18NRegistry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/i18n/I18NRegistry.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ChinoClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ChinoClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/audio/AudioManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/audio/AudioManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/command/CommandContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/command/CommandContext.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +148,8 @@
       <workItem from="1604748273090" duration="4049000" />
       <workItem from="1604796077605" duration="18046000" />
       <workItem from="1604962472517" duration="5569000" />
-      <workItem from="1605003102733" duration="340000" />
+      <workItem from="1605003102733" duration="840000" />
+      <workItem from="1605007875887" duration="2055000" />
     </task>
     <servers />
   </component>

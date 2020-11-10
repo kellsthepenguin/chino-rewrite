@@ -4,8 +4,9 @@ import CommandContext from "../../util/command/CommandContext";
 import momentDurationFormatSetup from "moment-duration-format";
 import * as moment from 'moment'
 import {Track} from "erela.js";
-import {MessageEmbed} from "discord.js";
+import {Message, MessageEmbed, MessageReaction, User} from "discord.js";
 import {TFunc} from "../../util/i18n/I18NRegistry";
+import {PlaylistInfo, SearchResult} from "erela.js/structures/Manager";
 
 momentDurationFormatSetup(moment)
 
@@ -31,6 +32,11 @@ export default class Play extends Command {
         ])
     }
 
+    getPlaylistInfoEmbed(list: SearchResult, t: TFunc) {
+        return new MessageEmbed().setTitle(`${t('audio:info.playlist.added')} - ${list.playlist!.name}`).addField(t('audio:info.playlist.duration'), moment.duration(list.playlist!.duration).format('hh:mm:ss'))
+    }
+
+
     async execute(ctx: CommandContext) {
         const t = ctx.t
         if (!ctx.args.length) return ctx.chn.send(ctx.embed().setTitle(t('common:commands.audio.play.usage.title')).setDescription(
@@ -40,10 +46,81 @@ export default class Play extends Command {
         ))
         const search = ctx.args.join(' ')
         const res = await this.bot.audio.search(search, ctx.author)
+        let track
         if (res.loadType === 'SEARCH_RESULT') {
             const embeds = res.tracks.map(track => this.getTrackInfoEmbed(track, t))
-            const m = await ctx.chn.send(embeds[0])
-            await Promise.all(['◀', '✅', '▶'].map(value => m.react(value)))
+            const m: Message = await ctx.chn.send(embeds[0])
+            const reacts = ['◀', '✅', '▶']
+            await Promise.all(reacts.map(value => m.react(value)))
+            let page = 0
+            await new Promise(async resolve => {
+                const collector = m.createReactionCollector((reaction: MessageReaction, user: User) => user.id === ctx.author.id && reacts.includes(reaction.emoji.name), {
+                    dispose: true
+                })
+                const handle = async (reaction: MessageReaction, user: User) => {
+                    if (reaction.emoji.name === '◀') {
+                        if (embeds[page - 1]) {
+                            await m.edit(embeds[--page])
+                        }
+                    }
+                    if (reaction.emoji.name === '▶') {
+                        if (embeds[page + 1]) {
+                            await m.edit(embeds[++page])
+                        }
+                    }
+                    if (reaction.emoji.name === '✅') {
+                        return collector.stop(page.toString())
+                    }
+                }
+                collector.on('collect', handle)
+                collector.on('remove', handle)
+                collector.on('end', (collected, reason) => {
+                    if (reason === 'time') {
+                        resolve(m.delete())
+                        ctx.chn.send(t('errors:timeout'))
+                        return
+                    }
+                    if (!isNaN(Number(reason))) {
+                        const index = parseInt(reason)
+                        track = res.tracks[index]
+                    }
+                    resolve(m.delete())
+                })
+            })
+        } else if (res.loadType === 'TRACK_LOADED') {
+            track = res.tracks[0]
+        } else if (res.loadType === 'NO_MATCHES') {
+            return ctx.chn.send(ctx.embed().setTitle(t('audio:errors.no_matches')))
+        } else if (res.loadType === 'PLAYLIST_LOADED') {
+            track = res.tracks
+        } else if (res.loadType === "LOAD_FAILED") {
+            return ctx.chn.send(ctx.embed().setDescription('```\n' + res.exception?.message + '```'))
         }
+
+        if (!track) return
+
+        const player = this.bot.audio.create({
+            guild: ctx.msg.guild!.id,
+            textChannel: ctx.chn.id,
+            voiceChannel: ctx.member!.voice.channelID!
+        })
+
+        player.connect()
+
+        player.queue.add(track)
+
+        if (track instanceof Array) {
+            await ctx.chn.send(this.getPlaylistInfoEmbed(res, t))
+        } else {
+            await ctx.chn.send(this.getTrackInfoEmbed(track, t))
+        }
+
+        if (!player.playing && !player.paused && !player.queue.size) await player.play()
+
+        if (
+            !player.playing &&
+            !player.paused &&
+            player.queue.totalSize === res.tracks.length
+        ) await player.play()
     }
 }
