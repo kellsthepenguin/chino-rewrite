@@ -1,0 +1,14 @@
+{
+  "errors": {
+    "no_matches": "일치하는 곡이 없어요!"
+  },
+  "meta": {
+    "duration": "길이"
+  },
+  "info": {
+    "playlist": {
+      "duration": "전체 길이",
+      "added": "플레이리스트 추가됨"
+    }
+  }
+}
