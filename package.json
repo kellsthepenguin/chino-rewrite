@@ -21,6 +21,7 @@
     "discord.js": "^12.4.1",
     "erela.js": "^2.2.0",
     "figlet": "^1.5.0",
+    "fs": "^0.0.1-security",
     "knex": "^0.21.12",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
