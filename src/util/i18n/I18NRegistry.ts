@@ -4,6 +4,8 @@ import {Message} from "discord.js";
 import fs from "fs/promises";
 import chokidar from "chokidar";
 
+export type TFunc = ((key: string, templates?: any) => string)
+
 type optionsTyp = {
     dir: string
     getLang(msg: Message): string | Promise<string>
