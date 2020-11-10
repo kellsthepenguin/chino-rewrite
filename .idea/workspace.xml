@@ -23,13 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/audio/stop.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/audio/skip.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.weblate/ko/audio.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/ko/audio.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.weblate/ko/commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/ko/commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.weblate/ko/errors.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/ko/errors.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/command/Command.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/command/Command.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +146,7 @@
       <workItem from="1604796077605" duration="18046000" />
       <workItem from="1604962472517" duration="5569000" />
       <workItem from="1605003102733" duration="840000" />
-      <workItem from="1605007875887" duration="3255000" />
+      <workItem from="1605007875887" duration="5289000" />
     </task>
     <servers />
   </component>
@@ -275,10 +270,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2296" y="67" width="1378" height="705" key="dock-window-1/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605010186856" />
-    <state x="2176" y="59" width="1378" height="705" key="dock-window-2" timestamp="1605011067834">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="299" y="156" width="1378" height="705" key="dock-window-2" timestamp="1605012465392">
+      <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state x="2176" y="59" width="1378" height="705" key="dock-window-2/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605011067834" />
+    <state x="299" y="156" width="1378" height="705" key="dock-window-2/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605012465392" />
     <state x="554" y="86" width="802" height="937" key="new project wizard" timestamp="1604643664293">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
