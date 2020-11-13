@@ -21,8 +21,9 @@ export default class CommandContext {
     prefix: string
     member: GuildMember|null
     audio?: Player
+    user: any
     t: ((key: string, templates?: any) => string)
-    constructor(bot: ChinoClient, msg: Message, args: string[], cmd: Command, t: ((key: string, templates?: any) => string), prefix: string) {
+    constructor(bot: ChinoClient, msg: Message, args: string[], cmd: Command, t: ((key: string, templates?: any) => string), prefix: string, user: any) {
         this.msg = msg
         this.cmd = cmd
         this.bot = bot
@@ -32,6 +33,7 @@ export default class CommandContext {
         this.member = msg.member
         this.prefix = prefix
         this.t = t
+        this.user = user
         if (msg.guild) {
             this.audio = this.bot.audio.players.get(msg.guild.id)
         }

@@ -33,7 +33,22 @@ export default class Play extends Command {
     }
 
     getPlaylistInfoEmbed(list: SearchResult, t: TFunc) {
-        return new MessageEmbed().setTitle(`${t('audio:info.playlist.added')} - ${list.playlist!.name}`).addField(t('audio:info.playlist.duration'), moment.duration(list.playlist!.duration).format('hh:mm:ss'))
+        if (list.playlist) {
+            return new MessageEmbed().setTitle(`${t('audio:info.playlist.added')} - ${list.playlist!.name}`).addField(t('audio:info.playlist.duration'), moment.duration(list.playlist!.duration).format('hh:mm:ss'))
+        } else {
+            return new MessageEmbed().setTitle(t('audio:result.multi.title')).addFields([
+                {
+                    name: t('audio:result.multi.duration'),
+                    inline: true,
+                    value: moment.duration(list.tracks.map(r=>r.duration).reduce((acc,cur)=>acc+cur)).format('hh:mm:ss')
+                },
+                {
+                    name: t('audio:result.multi.cnt'),
+                    inline: true,
+                    value: list.tracks.length
+                }
+            ])
+        }
     }
 
 
@@ -49,27 +64,36 @@ export default class Play extends Command {
         let track
         if (res.loadType === 'SEARCH_RESULT') {
             const embeds = res.tracks.map(track => this.getTrackInfoEmbed(track, t))
-            const m: Message = await ctx.chn.send(embeds[0])
-            const reacts = ['◀', '✅', '▶']
+            const tracks: Track[] = []
+            function embed(index: number) {
+                return new MessageEmbed(embeds[index].toJSON()).setFooter(t('audio:tracks.selected', {cnt: tracks.length.toString()}))
+            }
+            const m: Message = await ctx.chn.send(embed(0))
+            const reacts = ['◀', '▶', '➕', '✅']
             await Promise.all(reacts.map(value => m.react(value)))
             let page = 0
             await new Promise(async resolve => {
                 const collector = m.createReactionCollector((reaction: MessageReaction, user: User) => user.id === ctx.author.id && reacts.includes(reaction.emoji.name), {
                     dispose: true
                 })
+
                 const handle = async (reaction: MessageReaction, user: User) => {
                     if (reaction.emoji.name === '◀') {
                         if (embeds[page - 1]) {
-                            await m.edit(embeds[--page])
+                            await m.edit(embed(--page))
                         }
                     }
                     if (reaction.emoji.name === '▶') {
                         if (embeds[page + 1]) {
-                            await m.edit(embeds[++page])
+                            await m.edit(embed(++page))
                         }
                     }
+                    if (reaction.emoji.name === '➕') {
+                        tracks.push(res.tracks[page])
+                        await m.edit(embed(page))
+                    }
                     if (reaction.emoji.name === '✅') {
-                        return collector.stop(page.toString())
+                        return collector.stop('select')
                     }
                 }
                 collector.on('collect', handle)
@@ -80,9 +104,11 @@ export default class Play extends Command {
                         ctx.chn.send(t('errors:timeout'))
                         return
                     }
-                    if (!isNaN(Number(reason))) {
-                        const index = parseInt(reason)
-                        track = res.tracks[index]
+                    if (reason === 'select') {
+                        if (!tracks.length) return resolve(m.delete())
+                        else if (tracks.length === 1) track = tracks[0]
+                        else track = tracks
+                        res.tracks = tracks
                     }
                     resolve(m.delete())
                 })

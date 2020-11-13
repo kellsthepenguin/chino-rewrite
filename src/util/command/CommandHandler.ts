@@ -63,7 +63,7 @@ class CommandHandler extends EventEmitter {
             if (!cmd) return this.emit('commandNotFound', msg)
             const u = (await this.client.db('users').where({id:msg.author.id}).limit(1))[0]
             const t = await this.client.i18n.getT(undefined, msg)
-            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t, prefix)
+            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t, prefix, u)
             if (!u) {
                 const reg = await require('../registration/register').default(ctx)
                 if (!reg) return
@@ -103,7 +103,7 @@ class CommandHandler extends EventEmitter {
             try {
                 await cmd.execute(ctx)
             } catch (e) {
-                this.emit('error', ctx, e)
+                console.error(e.stack)
             }
         })
 

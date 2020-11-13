@@ -10,7 +10,8 @@ export default class Stop extends Command {
             audio: {
                 join: true,
                 player: true
-            }
+            },
+            category: 'audio'
         });
     }
 

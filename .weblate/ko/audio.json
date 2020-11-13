@@ -30,5 +30,15 @@
       "title": "정지",
       "desc": "재생중인 곡을 정지하고 대기열을 초기화 했어요!"
     }
+  },
+  "tracks": {
+    "selected": "곡 {{cnt}}개 선택함"
+  },
+  "result": {
+    "multi": {
+      "title": "곡 추가됨",
+      "duration": "전체 길이",
+      "cnt": "곡 수"
+    }
   }
 }
