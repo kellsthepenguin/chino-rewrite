@@ -11,6 +11,11 @@ export default class Money extends Command {
     }
 
     async execute(ctx: CommandContext) {
-        console.log(ctx.user.money)
+        const {t} = ctx
+        await ctx.chn.send(ctx.embed().setTitle(t('common:economy.money.title', {
+            tag: ctx.author.tag
+        })).setDescription(t('common:economy.money.desc', {
+            money: ctx.user.money
+        })))
     }
 }

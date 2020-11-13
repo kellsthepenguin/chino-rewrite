@@ -38,6 +38,7 @@ export default class CommandContext {
             this.audio = this.bot.audio.players.get(msg.guild.id)
         }
     }
+
     embed() {
         return new MessageEmbed().setColor('BLUE').setFooter(this.msg.author.tag, this.msg.author.displayAvatarURL({dynamic: true}))
     }
