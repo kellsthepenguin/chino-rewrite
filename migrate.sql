@@ -3,4 +3,6 @@ create table users (
 	locale text not null default 'ko'
 );
 
-alter table users add money text not null default 0;
+alter table users add money int not null default 0;
+
+alter table users add cooldowns text not null default '{}';
