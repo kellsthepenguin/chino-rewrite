@@ -6,6 +6,7 @@ import path from "path";
 import fs from 'fs/promises'
 import {Collection, Message, MessageEmbed} from "discord.js";
 import CommandContext from "./CommandContext";
+import moment from "moment";
 
 class CommandHandler extends EventEmitter {
     commandMap: Collection<string, Command> = new Collection<string, Command>()
@@ -61,8 +62,26 @@ class CommandHandler extends EventEmitter {
             }
             const cmd = Array.from(this.commandMap.values()).find(r => r.options.id === command || (r.options.aliases[lang] || [r.options.id]).includes(command))
             if (!cmd) return this.emit('commandNotFound', msg)
-            const u = (await this.client.db('users').where({id:msg.author.id}).limit(1))[0]
+            let u = (await this.client.db('users').where({id:msg.author.id}).limit(1))[0]
             const t = await this.client.i18n.getT(undefined, msg)
+            if (cmd.options.cool) {
+                const c = JSON.parse(u.cooldowns)
+                if (!c[msg.author.id]) {
+                    c[msg.author.id] = {}
+                }
+                if (c[msg.author.id][cmd.options.id] && (Date.now() - c[msg.author.id][cmd.options.id]) < cmd.options.cool) {
+                    return msg.channel.send(new MessageEmbed({
+                        title: t('errors:cooldown.title'),
+                        description: t('errors:cooldown.desc', {
+                            endsAt: moment(Date.now() + cmd.options.cool).format(t('common:date-format'))
+                        })
+                    }))
+                } else {
+                    c[msg.author.id][cmd.options.id] = Date.now()
+                    await this.client.db('users').update({cooldowns: JSON.stringify(c)}).where({id: msg.author.id})
+                    u = (await this.client.db('users').where({id:msg.author.id}).limit(1))[0]
+                }
+            }
             const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t, prefix, u)
             if (!u) {
                 const reg = await require('../registration/register').default(ctx)

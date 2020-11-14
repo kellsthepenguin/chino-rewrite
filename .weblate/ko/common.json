@@ -33,5 +33,6 @@
       "title": "{{tag}}님의 돈",
       "desc": "{{money}}원이 있네요!"
     }
-  }
+  },
+  "date-format": "MM월 DD일 hh시 mm분 ss초"
 }

@@ -15,6 +15,7 @@ type CommandOpts = {
         player?: boolean
     }
     guildOnly?: boolean
+    cool?: number
 }
 
 export default class Command {
