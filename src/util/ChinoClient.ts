@@ -16,7 +16,7 @@ export default class ChinoClient extends Client {
     constructor() {
         super({
             disableMentions: 'everyone',
-            restTimeOffset: 50,
+            restTimeOffset: 0,
         })
         this.i18n = new I18NRegistry(this, {
             watch: true,

@@ -40,5 +40,9 @@
       "duration": "전체 길이",
       "cnt": "곡 수"
     }
+  },
+  "queue": {
+    "title": "대기열",
+    "range": "{{start}}-{{end}} 전체: {{total}}"
   }
 }
