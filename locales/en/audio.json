@@ -1,0 +1,44 @@
+{
+    "errors": {
+        "no_matches": "Result not found!"
+    },
+    "meta": {
+        "duration": "Total"
+    },
+    "info": {
+        "playlist": {
+            "duration": "Total length",
+            "added": "Added playlist"
+        }
+    },
+    "skip": {
+        "success": {
+            "title": "Skipped",
+            "desc": "Skipped current song! Now I will play {{current}}!"
+        }
+    },
+    "stop": {
+        "error": {
+            "permissions": {
+                "rest": {
+                    "title": "You don't have permissions.",
+                    "desc": "You should be an administrator or the requester of all rest songs!"
+                }
+            }
+        },
+        "success": {
+            "title": "stop",
+            "desc": "Stopped!"
+        }
+    },
+    "tracks": {
+        "selected": "Selected {{cnt}} songs"
+    },
+    "result": {
+        "multi": {
+            "title": "Added song",
+            "duration": "Total length",
+            "cnt": "count"
+        }
+    }
+}

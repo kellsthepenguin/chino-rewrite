@@ -6,7 +6,8 @@
         "title": "Chino bot",
         "categories": {
             "common": "General",
-            "dev": "Developer-only commands"
+            "dev": "Developer-only commands",
+            "audio": "Music"
         }
     },
     "register": {
@@ -18,6 +19,22 @@
                 "title": "Changed language",
                 "desc": "Now you can use chino bot with English!"
             }
+        }
+    },
+    "commands": {
+        "audio": {
+            "play": {
+                "usage": {
+                    "title": "`play` command usage",
+                    "desc": "{{prefix}}play <title/URL>"
+                }
+            }
+        }
+    },
+    "economy": {
+        "money": {
+            "title": "Money of {{tag}}",
+            "desc": "You have {{money}} won!"
         }
     }
 }
