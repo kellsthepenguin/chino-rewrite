@@ -26,7 +26,7 @@ export default class Skip extends Command {
                     .setDescription(ctx.t('audio:skip.error.permissions.desc')))
             }
         }
-        player.destroy()
+        player.stop()
         return ctx.chn.send(ctx.embed().setTitle(ctx.t('audio:skip.success.title')).setDescription(ctx.t('audio:skip.success.desc', {
             title: player.queue.current?.title
         })))

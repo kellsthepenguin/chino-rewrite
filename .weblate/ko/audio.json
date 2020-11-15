@@ -44,5 +44,10 @@
   "queue": {
     "title": "대기열",
     "range": "{{start}}-{{end}} 전체: {{total}}"
+  },
+  "volume": {
+    "usage": "> 명령어 사용법: {{prefix}}볼륨 [1-1000]",
+    "current": "> 현재 볼륨은 {{current}}% 입니다!",
+    "success": "> 볼륨이 {{volume}}%로 설정되었어요!"
   }
 }
