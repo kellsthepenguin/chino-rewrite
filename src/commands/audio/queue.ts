@@ -22,7 +22,17 @@ export default class Stop extends Command {
         const chunked = _.chunk(q, 10)
         const embeds = chunked.map((chunk, idx) => (
             new MessageEmbed().setTitle(ctx.t('audio:queue.title')).setDescription(chunk.map((item, index) => (
-                `${item.identifier === p.queue.current?.identifier ? '**' : ''}${10*idx+index+1} ${item.title.length > 40 ? item.title.slice(0,40) + '...' : item.title} ${moment.duration(item.duration).format('hh:mm:ss')}${item.identifier === p.queue.current?.identifier ? '**' : ''}`
+                `${item.identifier === p.queue.current?.identifier ? '**' : ''}${
+                    10*idx+index+1
+                } ${
+                    item.title.length > 40 ?
+                        item.title.slice(0,40) + '...' : 
+                        item.title
+                } ${
+                    moment.duration(item.duration).format('hh:mm:ss')
+                }${
+                    item.identifier === p.queue.current?.identifier ? '**' : ''
+                }`
             ))).setFooter(ctx.t('audio:queue.range', {
                 start: 10*idx+1,
                 end: 10*idx+1+9,
