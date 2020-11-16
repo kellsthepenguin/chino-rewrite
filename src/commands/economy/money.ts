@@ -6,7 +6,7 @@ export default class Money extends Command {
     constructor(client: ChinoClient) {
         super(client, {
             category: 'economy',
-            id: 'money'
+            id: 'money.view'
         });
     }
 

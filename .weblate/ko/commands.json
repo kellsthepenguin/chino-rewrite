@@ -2,9 +2,10 @@
   "help": "도움말",
   "play": "재생",
   "stop": "정지",
-  "money": "돈",
   "skip": "정지",
   "queue": "대기열;큐",
   "lang": "언어",
-  "volume": "볼륨;vol"
+  "volume": "볼륨;vol",
+  "money.get": "돈받기",
+  "money.view": "돈"
 }

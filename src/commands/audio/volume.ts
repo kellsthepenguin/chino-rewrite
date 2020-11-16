@@ -9,7 +9,8 @@ class Volume extends Command {
             audio: {
                 player: true,
                 join: true
-            }
+            },
+            category: 'audio'
         });
     }
 
