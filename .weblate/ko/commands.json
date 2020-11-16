@@ -7,5 +7,6 @@
   "lang": "언어",
   "volume": "볼륨;vol",
   "money.get": "돈받기",
-  "money.view": "돈"
+  "money.view": "돈",
+  "now_playing": "현재곡"
 }

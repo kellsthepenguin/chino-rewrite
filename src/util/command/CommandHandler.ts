@@ -58,17 +58,9 @@ class CommandHandler extends EventEmitter {
                     }
                 }
 
-                const lang = Array.from(new Set(Object.keys(aliases)))
-
-                if (cmd.options.globalAliases) {
-                    for (const alias of lang) {
-                        aliases[alias] = aliases[aliases[alias]] ?  [...aliases[alias], ...cmd.options.globalAliases] : cmd.options.globalAliases
-                    }
-                }
-
                 cmd.options.aliases = aliases
             }
-            const cmd = Array.from(this.commandMap.values()).find(r => r.options.id === command || (r.options.aliases[lang] || [r.options.id]).includes(command))
+            const cmd = Array.from(this.commandMap.values()).find(r => r.options.id === command || (r.options.aliases[lang] || []).includes(command) || (r.options.globalAliases || []).includes(command))
             if (!cmd) return this.emit('commandNotFound', msg)
             let u = (await this.client.db('users').where({id:msg.author.id}).limit(1))[0]
             const t = await this.client.i18n.getT(undefined, msg)
