@@ -66,8 +66,6 @@ class CommandHandler extends EventEmitter {
                     }
                 }
 
-                console.log(aliases)
-
                 cmd.options.aliases = aliases
             }
             const cmd = Array.from(this.commandMap.values()).find(r => r.options.id === command || (r.options.aliases[lang] || [r.options.id]).includes(command))

@@ -2,9 +2,12 @@ import { Manager } from "erela.js";
 import {Payload} from "erela.js/structures/Manager";
 import ChinoClient from "../ChinoClient";
 import config from '../../../config.json'
+import {Collection, Message} from "discord.js";
 
 export default class AudioManager extends Manager {
     client: ChinoClient
+    npMessageMap = new Collection<string, Message>()
+
     constructor(client: ChinoClient) {
         super({
             send(id: string, payload: Payload) {
@@ -15,6 +18,26 @@ export default class AudioManager extends Manager {
         })
         this.client = client
         client.on('raw', payload => this.updateVoiceState(payload))
+
+        this.on('nodeRaw',async (payload: any) => {
+            if (payload.op === 'playerUpdate') {
+                const NowPlaying = require('../../commands/audio/now').default
+
+                const guild = client.guilds.cache.get(payload.guildId)
+                const msg = this.npMessageMap.get(payload.guildId)
+                if (!guild || !msg) return
+                if (msg) {
+                    if (!msg.deleted) {
+                        await msg.edit(await NowPlaying.getEmbed(guild))
+                    } else {
+                        if (!msg.channel.deleted) {
+                            await msg.channel.send(await NowPlaying.getEmbed(guild))
+                        }
+                    }
+                }
+            }
+        })
+
         this.setupEvents()
     }
 
