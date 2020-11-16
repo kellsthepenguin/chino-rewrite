@@ -46,7 +46,7 @@ class CommandHandler extends EventEmitter {
                 const aliases: any = {}
 
                 try {
-                    aliases['ko'] = require('../../../.weblate/ko/commands.json')[cmd.options.id].split(';')
+                    aliases['ko'] = require('../../../.weblate/ko/commands.json')[cmd.options.id]?.split(';') || []
                 } catch (e) {}
 
                 for (const c of contents) {
@@ -57,6 +57,16 @@ class CommandHandler extends EventEmitter {
                         aliases[c] = aliases[c] || []
                     }
                 }
+
+                const lang = Array.from(new Set(Object.keys(aliases)))
+
+                if (cmd.options.globalAliases) {
+                    for (const alias of lang) {
+                        aliases[alias] = aliases[aliases[alias]] ?  [...aliases[alias], ...cmd.options.globalAliases] : cmd.options.globalAliases
+                    }
+                }
+
+                console.log(aliases)
 
                 cmd.options.aliases = aliases
             }

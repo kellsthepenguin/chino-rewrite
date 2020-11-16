@@ -35,6 +35,31 @@ export default class ChinoClient extends Client {
         })
         this.db = Knex(config.db)
         this.on('ready', () => require('../listeners/common/Ready').default(this))
+
+        this.on('ready', async () => {
+            const guilds = this.guilds.cache.map(r => r.id)
+            const guildData = await this.db('guilds')
+            for (const guild of guilds) {
+                if (!guildData.find(r => r.id === guild)) {
+                    await this.db('guilds').insert({id: guild})
+                    console.log(`joined guild ${guild}`)
+                }
+            }
+        })
+        this.on('guildCreate', async (guild) => {
+            const guildData = await this.db('guilds')
+            if (!guildData.find(r => r.id === guild.id)) {
+                await this.db('guilds').insert({id: guild.id})
+                console.log(`joined guild ${guild.id}`)
+            }
+        })
+        this.on('guildDelete', async (guild) => {
+            const guildData = await this.db('guilds')
+            if (guildData.find(r => r.id === guild)) {
+                await this.db('guilds').delete().where({id: guild.id})
+                console.log(`left guild ${guild.id}`)
+            }
+        })
     }
 
     async start() {
@@ -44,7 +69,7 @@ export default class ChinoClient extends Client {
             if (data.owner instanceof User) {
                 this.owners = [data.owner.id]
             } else {
-                this.owners = data.owner.members.map(r=>r.user.id)
+                this.owners = data.owner.members.map(r => r.user.id)
             }
         }
     }

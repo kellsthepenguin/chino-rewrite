@@ -16,6 +16,7 @@ type CommandOpts = {
     }
     guildOnly?: boolean
     cool?: number
+    globalAliases?: string[]
 }
 
 export default class Command {

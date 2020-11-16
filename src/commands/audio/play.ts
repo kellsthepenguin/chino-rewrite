@@ -6,7 +6,7 @@ import * as moment from 'moment'
 import {Track} from "erela.js";
 import {Message, MessageEmbed, MessageReaction, User} from "discord.js";
 import {TFunc} from "../../util/i18n/I18NRegistry";
-import {PlaylistInfo, SearchResult} from "erela.js/structures/Manager";
+import {SearchResult} from "erela.js/structures/Manager";
 
 momentDurationFormatSetup(moment)
 
