@@ -23,10 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/audio/now.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/audio/now.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/audio/skip.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/audio/skip.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/command/CommandHandler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,12 +92,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/commands/economy" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.2.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="wsl://UBUNTU@/home/chino1204/.nvm/versions/node/v15.2.1/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -158,6 +159,7 @@
       <workItem from="1605480988398" duration="4479000" />
       <workItem from="1605525807607" duration="9079000" />
       <workItem from="1605567309221" duration="2065000" />
+      <workItem from="1605622348707" duration="1050000" />
     </task>
     <servers />
   </component>
@@ -193,10 +195,11 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="221" y="335" width="1587" height="435" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605427751599" />
-    <state x="474" y="203" width="1084" height="808" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605317364712">
-      <screen x="0" y="28" width="1920" height="1052" />
+    <state x="474" y="213" width="1084" height="849" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605623031349">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="474" y="203" width="1084" height="808" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605317364712" />
+    <state x="474" y="213" width="1084" height="849" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1605623031349" />
     <state x="638" y="347" width="626" height="418" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604578999676">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
@@ -293,10 +296,11 @@
     </state>
     <state width="1866" height="273" key="GridCell.Tab.3.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605568149716" />
     <state width="1866" height="287" key="GridCell.Tab.3.right/0.28.1920.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605320432684" />
-    <state x="165" y="186" width="1617" height="732" key="SettingsEditor" timestamp="1605427774805">
-      <screen x="0" y="28" width="1920" height="1052" />
+    <state x="162" y="213" width="1617" height="732" key="SettingsEditor" timestamp="1605623447980">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="165" y="186" width="1617" height="732" key="SettingsEditor/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605427774805" />
+    <state x="162" y="213" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1605623447980" />
     <state x="485" y="222" width="939" height="722" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604668498908">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
@@ -317,9 +321,10 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="538" y="257" key="run.anything.popup/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604710989674" />
-    <state x="679" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1605419233242">
-      <screen x="0" y="28" width="1920" height="1052" />
+    <state x="679" y="273" width="672" height="671" key="search.everywhere.popup" timestamp="1605623443195">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="679" y="264" width="672" height="678" key="search.everywhere.popup/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605419233242" />
+    <state x="679" y="273" width="672" height="671" key="search.everywhere.popup/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1605623443195" />
   </component>
 </project>
