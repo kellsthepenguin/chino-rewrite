@@ -40,12 +40,12 @@ class NowPlaying extends Command {
 
         const player = client.audio.players.get(guild.id)
 
-        const tr = player?.queue.current!
+        const tr = player?.queue.current
 
         return player && tr ? new MessageEmbed().setColor('GREEN')
                 .setTitle(tr.title)
                 .setURL(tr.uri!)
-                .setThumbnail(tr.displayThumbnail!('maxresdefault'))
+                .setThumbnail(tr.displayThumbnail?('maxresdefault') : '')
                 .setDescription('```\n' + moment.duration(player.position).format('hh:mm:ss') + '/' + moment.duration(tr.duration).format('hh:mm:ss') + '\n' + NowPlaying.createBar(tr.duration!, player.position)[0] + '```')
             : new MessageEmbed().setTitle(t('audio:now.no.title')).setColor('RED')
     }

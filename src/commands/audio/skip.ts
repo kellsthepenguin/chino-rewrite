@@ -21,7 +21,7 @@ export default class Skip extends Command {
             let t
             if (player.queue.current) t = player.queue.current
             else t = player.queue[0]
-            if ((t.requester as User).id !== ctx.author.id) {
+            if ((t?.requester as User)?.id !== ctx.author.id) {
                 return ctx.chn.send(ctx.embed().setTitle(ctx.t('audio:skip.error.permissions.title'))
                     .setDescription(ctx.t('audio:skip.error.permissions.desc')))
             }

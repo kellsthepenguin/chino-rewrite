@@ -64,6 +64,11 @@ class CommandHandler extends EventEmitter {
             if (!cmd) return this.emit('commandNotFound', msg)
             let u = (await this.client.db('users').where({id:msg.author.id}).limit(1))[0]
             const t = await this.client.i18n.getT(undefined, msg)
+            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t, prefix, u)
+            if (!u) {
+                const reg = await require('../registration/register').default(ctx)
+                if (!reg) return
+            }
             if (cmd.options.cool) {
                 const c = JSON.parse(u.cooldowns)
                 if (!c[msg.author.id]) {
@@ -81,11 +86,6 @@ class CommandHandler extends EventEmitter {
                     await this.client.db('users').update({cooldowns: JSON.stringify(c)}).where({id: msg.author.id})
                     u = (await this.client.db('users').where({id:msg.author.id}).limit(1))[0]
                 }
-            }
-            const ctx = new CommandContext(this.client, msg, Array.from(args), cmd, t, prefix, u)
-            if (!u) {
-                const reg = await require('../registration/register').default(ctx)
-                if (!reg) return
             }
             if (cmd.options.ownerOnly) {
                 if (!this.client.owners.includes(msg.author.id)) {
