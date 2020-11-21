@@ -5,6 +5,7 @@ import CommandHandler from "./command/CommandHandler";
 import I18NRegistry from "./i18n/I18NRegistry";
 import Knex from "knex";
 import AudioManager from "./audio/AudioManager";
+import sio from 'socket.io-client'
 
 export default class ChinoClient extends Client {
     owners: string[] = []
@@ -12,12 +13,20 @@ export default class ChinoClient extends Client {
     i18n: I18NRegistry
     db: Knex
     audio: AudioManager
+    socket: SocketIOClient.Socket
 
     constructor() {
         super({
             disableMentions: 'everyone',
             restTimeOffset: 0,
         })
+
+        this.socket = sio(`http://127.0.0.1:${config.internal.back.port}/internal/bot`)
+
+        this.socket.on('connect', () => {
+            console.log('Backend Socket connected')
+        })
+        
         this.i18n = new I18NRegistry(this, {
             watch: true,
             dir: path.join(__dirname, '../../locales'),
