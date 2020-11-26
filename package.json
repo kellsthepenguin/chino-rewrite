@@ -22,7 +22,7 @@
     "ascii-table": "^0.0.9",
     "chokidar": "^3.4.3",
     "discord.js": "^12.5.1",
-    "dokdo": "wonderlandpark/dokdo",
+    "dokdo": "pikokr/dokdo",
     "erela.js": "^2.2.0",
     "figlet": "^1.5.0",
     "fs": "^0.0.1-security",

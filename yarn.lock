@@ -370,9 +370,9 @@ discord.js@^12.5.1:
     tweetnacl "^1.0.3"
     ws "^7.3.1"
 
-dokdo@wonderlandpark/dokdo:
+dokdo@pikokr/dokdo:
   version "0.0.1"
-  resolved "https://codeload.github.com/wonderlandpark/dokdo/tar.gz/d4dea14d4c7b35eca8b0915b39eebf148fdca44d"
+  resolved "https://codeload.github.com/pikokr/dokdo/tar.gz/da2d08c09bbb0ccd2fb841cd39d461546aeb54f6"
   dependencies:
     async-mutex "^0.2.4"
     dayjs "^1.9.6"
