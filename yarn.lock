@@ -130,6 +130,13 @@ assign-symbols@^1.0.0:
   resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
   integrity sha1-WWZ/QfrdTyDMvCu5a41Pf3jsA2c=
 
+async-mutex@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/async-mutex/-/async-mutex-0.2.4.tgz#f6ea5f9cc73147f395f86fa573a2af039fe63082"
+  integrity sha512-fcQKOXUKMQc57JlmjBCHtkKNrfGpHyR7vu18RfuLfeTAf4hK9PgOadPR5cDrBQ682zasrLUhJFe7EKAHJOduDg==
+  dependencies:
+    tslib "^2.0.0"
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
@@ -288,6 +295,11 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
+dayjs@^1.9.6:
+  version "1.9.6"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.6.tgz#6f0c77d76ac1ff63720dd1197e5cb87b67943d70"
+  integrity sha512-HngNLtPEBWRo8EFVmHFmSXAjtCX8rGNqeXQI0Gh7wCTSqwaKgPIDqu9m07wABVopNwzvOeCb+2711vQhDlcIXw==
+
 debug@4.1.1, debug@~4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
@@ -344,10 +356,10 @@ diff@^4.0.1:
   resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
   integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
 
-discord.js@^12.4.1:
-  version "12.4.1"
-  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.4.1.tgz#be88bb32caa9e41eae67749a4e2387585745ac3b"
-  integrity sha512-KxOB8LOAN3GmrvkD6a6Fr1nlfArIFZ+q7Uqg4T/5duB90GZy9a0/Py2E+Y+eHKP6ZUCR2mbNMLCcHGjahiaNqA==
+discord.js@^12.5.1:
+  version "12.5.1"
+  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.5.1.tgz#992b45753e3815526a279914ccc281d3496f5990"
+  integrity sha512-VwZkVaUAIOB9mKdca0I5MefPMTQJTNg0qdgi1huF3iwsFwJ0L5s/Y69AQe+iPmjuV6j9rtKoG0Ta0n9vgEIL6w==
   dependencies:
     "@discordjs/collection" "^0.1.6"
     "@discordjs/form-data" "^3.0.1"
@@ -357,6 +369,14 @@ discord.js@^12.4.1:
     setimmediate "^1.0.5"
     tweetnacl "^1.0.3"
     ws "^7.3.1"
+
+dokdo@wonderlandpark/dokdo:
+  version "0.0.1"
+  resolved "https://codeload.github.com/wonderlandpark/dokdo/tar.gz/d4dea14d4c7b35eca8b0915b39eebf148fdca44d"
+  dependencies:
+    async-mutex "^0.2.4"
+    dayjs "^1.9.6"
+    discord.js "^12.5.1"
 
 engine.io-client@~4.0.0:
   version "4.0.4"
@@ -1447,6 +1467,11 @@ ts-node@^9.0.0:
     make-error "^1.1.1"
     source-map-support "^0.5.17"
     yn "3.1.1"
+
+tslib@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.3.tgz#8e0741ac45fc0c226e58a17bfc3e64b9bc6ca61c"
+  integrity sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
 
 tweetnacl@^1.0.3:
   version "1.0.3"

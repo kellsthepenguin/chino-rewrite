@@ -6,6 +6,7 @@ import I18NRegistry from "./i18n/I18NRegistry";
 import Knex from "knex";
 import AudioManager from "./audio/AudioManager";
 import sio from 'socket.io-client'
+import Dokdo from 'dokdo'
 
 export default class ChinoClient extends Client {
     owners: string[] = []
@@ -14,6 +15,7 @@ export default class ChinoClient extends Client {
     db: Knex
     audio: AudioManager
     socket: SocketIOClient.Socket
+    dokdo: any
 
     constructor() {
         super({
@@ -91,5 +93,10 @@ export default class ChinoClient extends Client {
                 this.owners = data.owner.members.map(r => r.user.id)
             }
         }
+        this.dokdo = new Dokdo(this, {
+            prefix: config.prefix,
+            owners: this.owners
+        })
+        this.on('message', msg => this.dokdo?.run(msg))
     }
 }

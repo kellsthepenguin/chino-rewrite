@@ -23,7 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/mirror.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/mirror.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/@types/dokdo.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ChinoClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ChinoClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +97,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.2.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.7" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chino-rewrite-backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/@types" />
     <property name="nodejs_interpreter_path" value="wsl://UBUNTU@/home/chino1204/.nvm/versions/node/v15.2.1/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -109,11 +113,11 @@
       <recent name="com.github.pikokr.chino.listeners" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chino1204\Desktop\chino-rewrite\@types" />
       <recent name="$PROJECT_DIR$/src/commands/economy" />
       <recent name="$PROJECT_DIR$/src/commands/dev" />
       <recent name="$PROJECT_DIR$/src/commands/common" />
       <recent name="$PROJECT_DIR$/locales" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.weblate" />
@@ -163,7 +167,7 @@
       <workItem from="1605654654322" duration="1471000" />
       <workItem from="1605918092572" duration="28000" />
       <workItem from="1605958001574" duration="21000" />
-      <workItem from="1606361109707" duration="9635000" />
+      <workItem from="1606361109707" duration="11232000" />
     </task>
     <servers />
   </component>
