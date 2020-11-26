@@ -7,7 +7,8 @@
     "categories": {
       "common": "일반",
       "dev": "개발자용 명령어",
-      "audio": "음악"
+      "audio": "음악",
+      "economy": "돈"
     }
   },
   "config": {

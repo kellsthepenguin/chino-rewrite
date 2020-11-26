@@ -1,5 +1,5 @@
 import config from '../../config.json'
-import {Client, User} from "discord.js";
+import {Client, Intents, User} from "discord.js";
 import path from "path";
 import CommandHandler from "./command/CommandHandler";
 import I18NRegistry from "./i18n/I18NRegistry";
@@ -19,9 +19,16 @@ export default class ChinoClient extends Client {
         super({
             disableMentions: 'everyone',
             restTimeOffset: 0,
+            ws: {
+                intents: Intents.ALL
+            }
         })
 
-        this.socket = sio(`http://127.0.0.1:${config.internal.back.port}/internal/bot`)
+        this.socket = sio(`http://127.0.0.1:${config.internal.back.port}/internal/bot`, {
+            query: {
+                auth: config.internal.back.secret
+            }
+        })
 
         require('./socket').default(this)
 

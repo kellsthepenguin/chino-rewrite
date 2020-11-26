@@ -23,10 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.weblate/en/commands.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.weblate/ko/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/ko/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/economy/getmoney.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/economy/getmoney.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/ChinoClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ChinoClient.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +96,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.2.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.7" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chino-rewrite-backend" />
     <property name="nodejs_interpreter_path" value="wsl://UBUNTU@/home/chino1204/.nvm/versions/node/v15.2.1/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -167,7 +166,7 @@
       <workItem from="1605654654322" duration="1471000" />
       <workItem from="1605918092572" duration="28000" />
       <workItem from="1605958001574" duration="21000" />
-      <workItem from="1606361109707" duration="3074000" />
+      <workItem from="1606361109707" duration="8985000" />
     </task>
     <servers />
   </component>
@@ -220,10 +219,11 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="693" y="300" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604573087882" />
-    <state x="799" y="303" width="424" height="486" key="FileChooserDialogImpl" timestamp="1604739794308">
-      <screen x="0" y="28" width="1920" height="1052" />
+    <state x="799" y="312" width="424" height="486" key="FileChooserDialogImpl" timestamp="1606369398937">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="799" y="303" width="424" height="486" key="FileChooserDialogImpl/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1604739794308" />
+    <state x="799" y="312" key="FileChooserDialogImpl/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1606369398937" />
     <state width="1866" height="273" key="GridCell.Tab.0.bottom" timestamp="1605568150008">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
