@@ -8,6 +8,6 @@ jobs:
       - uses: spyoungtech/mirror-action@master
         if: github.repository == 'pikokr/chino-rewrite'
         with:
-          REMOTE: 'https://github.com/TeamEnd/chino-rewrite'
+          REMOTE: 'https://github.com/TeamEnd/chino-rewrite.git'
           GIT_USERNAME: pikokr
           GIT_PASSWORD: ${{ secrets.GITHUB_TOKEN }}

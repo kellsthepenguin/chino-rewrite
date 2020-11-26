@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/mirror.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/mirror.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/mirror.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +164,7 @@
       <workItem from="1605654654322" duration="1471000" />
       <workItem from="1605918092572" duration="28000" />
       <workItem from="1605958001574" duration="21000" />
-      <workItem from="1606361109707" duration="9355000" />
+      <workItem from="1606361109707" duration="9473000" />
     </task>
     <servers />
   </component>
