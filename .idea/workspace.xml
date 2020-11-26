@@ -23,10 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/mirror.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.weblate/en/commands.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.weblate/ko/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/ko/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/ChinoClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ChinoClient.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +164,7 @@
       <workItem from="1605654654322" duration="1471000" />
       <workItem from="1605918092572" duration="28000" />
       <workItem from="1605958001574" duration="21000" />
-      <workItem from="1606361109707" duration="8985000" />
+      <workItem from="1606361109707" duration="9355000" />
     </task>
     <servers />
   </component>
