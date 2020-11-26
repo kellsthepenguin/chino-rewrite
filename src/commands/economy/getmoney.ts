@@ -13,8 +13,9 @@ export default class GetMoney extends Command {
 
     async execute(ctx: CommandContext) {
         const {t} = ctx
+        await this.bot.db('users').update({money: Number(ctx.user.money) + 1000}).where({id: ctx.author.id})
         await ctx.chn.send(ctx.embed().setTitle(t('common:economy.money.received.title')).setDescription(t('common:economy.money.received.desc', {
-            money: ctx.user.money
+            money: (await this.bot.db('users').where({id: ctx.author.id}))[0].money
         })))
     }
 }

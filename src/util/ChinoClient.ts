@@ -23,10 +23,13 @@ export default class ChinoClient extends Client {
 
         this.socket = sio(`http://127.0.0.1:${config.internal.back.port}/internal/bot`)
 
+        require('./socket').default(this)
+
         this.socket.on('connect', () => {
             console.log('Backend Socket connected')
         })
-        
+    
+
         this.i18n = new I18NRegistry(this, {
             watch: true,
             dir: path.join(__dirname, '../../locales'),

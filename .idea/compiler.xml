@@ -4,6 +4,6 @@
     <bytecodeTargetLevel target="11" />
   </component>
   <component name="TypeScriptCompiler">
-    <option name="nodeInterpreterTextField" value="$USER_HOME$/.nvm/versions/node/v15.0.1/bin/node" />
+    <option name="nodeInterpreterTextField" value="wsl://UBUNTU@/home/chino1204/.nvm/versions/node/v15.2.1/bin/node" />
   </component>
 </project>

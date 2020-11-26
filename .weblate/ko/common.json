@@ -31,7 +31,11 @@
   "economy": {
     "money": {
       "title": "{{tag}}님의 돈",
-      "desc": "{{money}}원이 있네요!"
+      "desc": "{{money}}원이 있네요!",
+      "received": {
+        "title": "돈을 받았어요!",
+        "desc": "이제 {{money}}원이 있네요!"
+      }
     }
   },
   "date-format": "MM월 DD일 hh시 mm분 ss초"

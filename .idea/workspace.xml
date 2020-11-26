@@ -23,7 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c3796-8a3b-4ee3-84f6-98173cab7a73" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.weblate/ko/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/.weblate/ko/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/economy/getmoney.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/economy/getmoney.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ChinoClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ChinoClient.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,18 +103,11 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="discord-application" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/.weblate" />
-      <recent name="$PROJECT_DIR$/locales/ko" />
-      <recent name="$PROJECT_DIR$/locales" />
-      <recent name="$PROJECT_DIR$/.weblate/base" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.github.pikokr.chino.commands.dev" />
       <recent name="com.github.pikokr.chino.listeners" />
@@ -120,6 +117,13 @@
       <recent name="$PROJECT_DIR$/src/commands/dev" />
       <recent name="$PROJECT_DIR$/src/commands/common" />
       <recent name="$PROJECT_DIR$/locales" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.weblate" />
+      <recent name="$PROJECT_DIR$/locales/ko" />
+      <recent name="$PROJECT_DIR$/locales" />
+      <recent name="$PROJECT_DIR$/.weblate/base" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -162,6 +166,8 @@
       <workItem from="1605653688293" duration="413000" />
       <workItem from="1605654654322" duration="1471000" />
       <workItem from="1605918092572" duration="28000" />
+      <workItem from="1605958001574" duration="21000" />
+      <workItem from="1606361109707" duration="3074000" />
     </task>
     <servers />
   </component>
@@ -298,11 +304,11 @@
     </state>
     <state width="1866" height="273" key="GridCell.Tab.3.right/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605568149716" />
     <state width="1866" height="287" key="GridCell.Tab.3.right/0.28.1920.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605320432684" />
-    <state x="162" y="213" width="1617" height="732" key="SettingsEditor" timestamp="1605623447980">
+    <state x="162" y="213" width="1617" height="732" key="SettingsEditor" timestamp="1606361357004">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="165" y="186" width="1617" height="732" key="SettingsEditor/0.28.1920.1052/1920.0.1920.1080@0.28.1920.1052" timestamp="1605427774805" />
-    <state x="162" y="213" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1605623447980" />
+    <state x="162" y="213" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1606361357004" />
     <state x="485" y="222" width="939" height="722" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604668498908">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
