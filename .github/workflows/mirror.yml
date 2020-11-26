@@ -10,4 +10,4 @@ jobs:
         with:
           REMOTE: 'https://github.com/TeamEnd/chino-rewrite.git'
           GIT_USERNAME: pikokr
-          GIT_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          GIT_PASSWORD: ${{ secrets.ACCESS_TOKEN }}
